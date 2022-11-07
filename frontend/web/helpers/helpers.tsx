@@ -15,3 +15,9 @@
 // export function disabledYear(current: any) {
 //     return current.year() > 2022 || current.year() < 1900;
 // }
+
+export const optionList : string[] = [];
+
+for (let i = 1900; i < 2019; i++) {
+    optionList.push(i.toString());
+}

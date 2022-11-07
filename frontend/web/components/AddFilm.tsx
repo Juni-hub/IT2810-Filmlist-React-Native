@@ -1,8 +1,9 @@
-import React from "react";
+import { Alert, Input, List, Text } from 'native-base';
+import { Button, Center, Modal } from "native-base";
+
 import { CreateFormProps } from '../utils/Interface';
-import { Center, Button, Modal } from "native-base";
-import { CreateModalProps } from "../utils/Interface";
-import { List, Input, Alert, Text } from 'native-base';
+import { CreateShowFilmProps } from "../utils/Interface";
+import React from "react";
 
 /** 
 * Const for creating a form 
