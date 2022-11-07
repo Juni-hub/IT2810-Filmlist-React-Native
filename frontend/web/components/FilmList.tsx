@@ -128,9 +128,9 @@ export default function FilmList() {
         dispatch(setSorting("1"))
 
         title = "";
-        genre = useSelector ((state: Store) => state.genre);
-        year = useSelector ((state: Store) => state.year);
-        sorting = useSelector ((state: Store) => state.sorting);
+        genre = "";
+        year = "0";
+        sorting = "1";
     }
     
     return (
