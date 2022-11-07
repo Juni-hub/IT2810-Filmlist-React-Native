@@ -1,17 +1,17 @@
 import { ADD_FILM, SEARCH_FILMS } from '../queries/filmQueries';
-import { Box, Button, CheckIcon, Divider, HStack, Heading, Input, Row, Select, Spinner, Text, VStack } from 'native-base';
+import { Box, Button, CheckIcon, Divider, HStack, Heading, Input, InputRightElement, Row, Select, Spinner, Text, VStack } from 'native-base';
+import { Film, Values } from '../utils/Interface';
 import { setGenre, setSorting, setTitle, setYear } from '../redux/actions';
 import { useDispatch, useSelector } from "react-redux";
 import { useMutation, useQuery } from '@apollo/client'
 
 import { CreateForm } from './AddFilm';
-import { Film, Values } from '../utils/Interface';
 import { Pressable } from "react-native";
+import React from 'react';
 import { ShowFilmItem } from './FilmItem';
 import {Store} from "../redux/store";
 import {YearPicker} from './YearPicker';
 import { useState } from 'react';
-import React from 'react';
 
 const PAGE_SIZE = 15;
 
@@ -30,6 +30,7 @@ export default function FilmList() {
     });
     const [showFilm, setShowFilm] = useState(false);
     const [filterYear, setFilterYear] = useState(false);
+    const [searchTitle, setSearchTitle] = useState ("");
 
     const hideFilm = () => {
       setShowFilm(false);
@@ -126,6 +127,7 @@ export default function FilmList() {
         dispatch(setYear("0"))
         dispatch(setSorting("1"))
 
+        setSearchTitle("");
         title = "";
         genre = "";
         year = "0";
@@ -139,14 +141,17 @@ export default function FilmList() {
                 <Box justifyContent="center">
                     <Box marginTop={75} margin={2}>
                         <Input 
-                            value={title? title: ""} 
+                            value={searchTitle}
                             placeholder="Search for title" 
-                            onChangeText={e => dispatch(setTitle(e))}
+                            onChangeText={(e: string) => setSearchTitle(e)}
+                            InputRightElement={<Button size="xs" rounded="none" w="1/5" h="full" onPress={() => dispatch(setTitle(searchTitle))}>
+                            {<Text>Search</Text>}
+                            </Button>}
                         />
                     </Box>
                     <Box margin={2}>
                         <Select selectedValue={genre} mx={{base: 0, md: "Genre"
-                            }} onValueChange={e => dispatch(setGenre(e))} _selectedItem={{
+                            }} placeholder="Filter by genre"  onValueChange={e => dispatch(setGenre(e))} _selectedItem={{
                         bg: "cyan.600",
                             endIcon: <CheckIcon size={4} />
                         }} accessibilityLabel="Select genre">
