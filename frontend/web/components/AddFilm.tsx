@@ -1,6 +1,6 @@
 import React from "react";
 import { CreateFormProps } from '../utils/Interface';
-import { Center, Button, Modal } from "native-base";
+import { Center, Button, Modal, Select, CheckIcon } from "native-base";
 import { CreateModalProps } from "../utils/Interface";
 import { List, Input, Alert, Text } from 'native-base';
 
@@ -22,14 +22,23 @@ export const CreateForm: React.FC<CreateFormProps> = ({
   onCancel,
 }) => {
     const [title, setTitle] = React.useState("");
-    const [year, setYear] = React.useState(0);
-    const [cast, setCast] = React.useState([]);
-    const [genres, setGenres] = React.useState([]);
+    const [year, setYear] = React.useState("");
+    const [cast, setCast] = React.useState("");
+    const [genres, setGenres] = React.useState("");
 
-    const handleChange = (text: any) => setTitle(text);
+    const handleTitle = (value: string) => setTitle(value);
+    const handleYear = (value: string) => setYear(value);
+    const handleCast = (value: string) => setCast(value);
+    const handleGenres = (value: string) => setGenres(value);
 
     function createFilm() {
-      //onCreate("");
+      onCreate({
+          title: title, 
+          year: year, 
+          cast: cast,
+          genres: genres,
+        }
+      )
     }
 
     return(
@@ -40,31 +49,51 @@ export const CreateForm: React.FC<CreateFormProps> = ({
           <Modal.Header><Text>Chosen film</Text></Modal.Header>
           <Modal.Body>
             <Input
+                marginBottom={2}  
                 variant="outline"
-                onChangeText={handleChange}
+                onChangeText={handleTitle}
                 placeholder="Title"
             />
             <Input
+                marginBottom={2}
                 variant="outline"
-                onChangeText={handleChange}
+                onChangeText={handleYear}
                 placeholder="Year"
             />
             <Input
+                marginBottom={2}
                 variant="outline"
-                onChangeText={handleChange}
+                onChangeText={handleCast}
                 placeholder="Cast"
             />
-            <Input
-                variant="outline"
-                onChangeText={handleChange}
-                placeholder="Genres"
-            />
+            <Select 
+              placeholder="Genres" 
+              mx={{base: 0, md: "Genre"}} 
+              onValueChange={handleGenres} 
+              _selectedItem={{
+                bg: "cyan.600",
+                  endIcon: <CheckIcon size={4} />
+              }} 
+              accessibilityLabel="Select genre">
+                <Select.Item label="Drama" value="Drama" />
+                <Select.Item label="Documentary" value="Documentary" />
+                <Select.Item label="Sports" value="Sports" />
+                <Select.Item label="Silent" value="Silent" />
+                <Select.Item label="Adventure" value="Adventure" />
+                <Select.Item label="Western" value="Western" />
+                <Select.Item label="Romance" value="Romance" />
+                <Select.Item label="War" value="War" />
+                <Select.Item label="Comedy" value="Comedy" />
+                <Select.Item label="Horror" value="Horror" />
+                <Select.Item label="Historical" value="Historical" />
+                <Select.Item label="Animated" value="Animated" />
+            </Select>
           </Modal.Body>
           <Modal.Footer>
-            <Button variant="ghost" colorScheme="blueGray" onPress={onCancel}>
+            <Button marginRight={2} variant="outline" colorScheme="blueGray" onPress={onCancel}>
                 <Text>Close</Text>
             </Button>
-            <Button variant="ghost" colorScheme="blueGray" onPress={createFilm}>
+            <Button variant="outline" colorScheme="blueGray" onPress={createFilm}>
                 <Text>Add film</Text>
             </Button>
           </Modal.Footer>
@@ -73,64 +102,3 @@ export const CreateForm: React.FC<CreateFormProps> = ({
     </Center>
     );
 };
-
-/*
-  return (
-    <Modal
-      open={open}
-      title="Insert a new film"
-      okText="Create"
-      cancelText="Cancel"
-      onCancel={onCancel}
-      onOk={() => {
-        form
-        .validateFields()
-        .then(values => {
-          form.resetFields();
-          onCreate(values);
-        })
-        .catch(info => {
-          console.log('Validate Failed:', info);
-        });
-      }}
-    >
-      <Form
-        form={form}
-        layout="vertical"
-        name="form_in_modal"
-        initialValues={{ modifier: 'public' }}
-      >
-        <Form.Item
-          name="title"
-          label="Title"
-          rules={[{ required: true, message: 'Please input the title of the film!' }]}
-        >
-          <Input />
-        </Form.Item>
-
-        <Form.Item
-          name="year"
-          label="Year"
-        >
-          <Input />
-        </Form.Item>
-
-        <Form.Item
-          name="cast"
-          label="Cast"
-        >
-          <Input />
-        </Form.Item>
-
-        <Form.Item
-          name="genres"
-          label="Genres"
-        >
-        <Select>
-          {optionList}
-        </Select>
-        </Form.Item>
-      </Form>
-    </Modal>
-  );
- */

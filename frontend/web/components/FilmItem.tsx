@@ -22,13 +22,13 @@ export const ShowFilmItem: React.FC<CreateModalProps> = ({
             <Modal.CloseButton />
             <Modal.Header>Chosen film</Modal.Header>
             <Modal.Body>
-                    <Text style={{fontSize: 20}}> {film.title? film.title: ""} </Text>
-                    <Text style={{fontSize: 15}}>Year: {film.year? film.year: ""} </Text>
-                    <Text style={{fontSize: 15}}>Cast: {(film.cast.length === 0)? "No cast is registered for this film": film.cast.map((el) => el + ", ")}</Text>
-                    <Text style={{fontSize: 15}}>Genres: {(film.genres.length === 0)? "No genre is registered for this film" : film.genres.map((el) => el + ", ")}</Text>
+                    <Text marginBottom={2} style={{fontSize: 15}}> {film.title? film.title: ""} </Text>
+                    <Text marginBottom={2} style={{fontSize: 15}}>Year: {film.year? film.year: ""} </Text>
+                    <Text marginBottom={2} style={{fontSize: 15}}>Cast: {(film.cast.length === 0)? "No cast is registered for this film": film.cast.map((el) => el + ", ")}</Text>
+                    <Text marginBottom={2} style={{fontSize: 15}}>Genres: {(film.genres.length === 0)? "No genre is registered for this film" : film.genres.map((el) => el + ", ")}</Text>
             </Modal.Body>
             <Modal.Footer>
-                <Button variant="ghost" colorScheme="blueGray" onPress={onCancel}>
+                <Button variant="outline" colorScheme="blueGray" onPress={onCancel}>
                     <Text>Close</Text>
                 </Button>
             </Modal.Footer>
@@ -37,4 +37,3 @@ export const ShowFilmItem: React.FC<CreateModalProps> = ({
         </Center>
     );
 };
-  
