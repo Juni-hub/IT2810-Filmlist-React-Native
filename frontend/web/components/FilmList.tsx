@@ -165,34 +165,34 @@ export default function FilmList() {
                             <Select.Item label="Animated" value="Animated" />
                         </Select>
                     </Box>
-                    <Box>
-                        <Button
+                    <Box margin={2}>
+                        <Select selectedValue={sorting} mx={{base: 0, md: "Sort"
+                            }} onValueChange={e => dispatch(setSorting(e))} _selectedItem={{
+                        bg: "cyan.600",
+                            endIcon: <CheckIcon size={4} />
+                            }} accessibilityLabel="Sort">
+                            <Select.Item label="Ascending" value="1" />
+                            <Select.Item label="Descending" value="-1" />
+                        </Select>
+                    </Box>
+                    <Box margin={2}>
+                        <Button   
                             onPress={() => {
                                 setFilterYear(true);
                             }}
                         >
-                            <Text>Year</Text>
+                            <Text>Filter on year</Text>
                         </Button>
                     </Box>
                     <YearPicker
                             open={filterYear}
                             onClose={() => setFilterYear(false)}
                     />
-                    <Box>
-                    <Select selectedValue={sorting} mx={{base: 0, md: "Sort"
-                        }} onValueChange={e => dispatch(setSorting(e))} _selectedItem={{
-                    bg: "cyan.600",
-                        endIcon: <CheckIcon size={4} />
-                        }} accessibilityLabel="Sort">
-                        <Select.Item label="Ascending" value="1" />
-                        <Select.Item label="Descending" value="-1" />
-                    </Select>
-                    </Box>
                     <Box margin={2}>
                         <Button 
                             onPress={useReset}
                         >
-                           <Text>Reset Filters</Text> 
+                            <Text>Reset Filters</Text> 
                         </Button>
                     </Box>
                     <Box margin={2}>

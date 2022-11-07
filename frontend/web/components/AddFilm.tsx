@@ -1,6 +1,6 @@
 import { CreateFormProps } from '../utils/Interface';
 import { Center, Button, Modal, Select, CheckIcon } from "native-base";
-import { List, Input, Alert, Text } from 'native-base';
+import { List, Input, Text } from 'native-base';
 import React from 'react';
 
 /** 
