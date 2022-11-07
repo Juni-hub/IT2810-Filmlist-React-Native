@@ -1,18 +1,19 @@
-import React from "react";
 import { ADD_FILM, SEARCH_FILMS } from '../queries/filmQueries';
-//import { disabledYear, optionList } from '../helpers/helpers';
+import { Box, Button, CheckIcon, Divider, HStack, Heading, Input, Row, Select, Spinner, Text, VStack } from 'native-base';
 import { setGenre, setSorting, setTitle, setYear } from '../redux/actions';
 import { useDispatch, useSelector } from "react-redux";
 import { useMutation, useQuery } from '@apollo/client'
+
 import { CreateForm } from './AddFilm';
 import { Film } from '../utils/Interface';
-
+import { Pressable } from "react-native";
+import React from "react";
 import { ShowFilmItem } from './FilmItem';
 import {Store} from "../redux/store";
+import {YearPicker} from './YearPicker';
+import {optionList} from '../helpers/helpers'
 import { useState } from 'react';
-import {Card, Column, Box, VStack, Divider, Input, Select, Button,CheckIcon, Row, Text, HStack, Spinner, Heading} from 'native-base';
-import { Pressable, TouchableOpacity } from "react-native";
-//const Option  = Select;
+
 const PAGE_SIZE = 15;
 
 /** 
@@ -28,10 +29,11 @@ export default function FilmList() {
         cast: [""],
         genres: [""]
     });
-    const [isModalOpen, setIsModalOpen] = useState(false);
+    const [showFilm, setShowFilm] = useState(false);
+    const [filterYear, setFilterYear] = useState(false);
 
-    const handleCancel = () => {
-      setIsModalOpen(false);
+    const hideFilm = () => {
+      setShowFilm(false);
     };
 
     const dispatch = useDispatch();
@@ -95,24 +97,8 @@ export default function FilmList() {
 
     function handleClick(post: Film) {
         setCurrentPost(post);
-        setIsModalOpen(true);
+        setShowFilm(true);
     }
-    
-    // let body: any = [];
-    // body.push (
-    //     data.getFilteredPosts?.map((post: Film) => (
-    //         <Column xs={22} mt={6} className="my-4 mx-2">
-    //             <TouchableOpacity onPress={() => handleClick(post)}>
-    //             <Card pointerEvents="none">
-    //                 <Heading>
-    //                 {post.title}
-    //                 </Heading>
-    //                 <p>Year Released: {post.year? post.year: ""}</p>
-    //             </Card>
-    //             </TouchableOpacity>
-    //         </Column>
-    //     ))
-    // )
 
     let body: any = [];
     body.push (
@@ -181,12 +167,18 @@ export default function FilmList() {
                     </Select>
                     </Box>
                     <Box>
-                        <Input 
-                            value={year? year: ""} 
-                            placeholder="Search for year" 
-                            onChangeText={e => dispatch(setYear(e))}
-                        />
+                        <Button
+                            onPress={() => {
+                                setFilterYear(true);
+                            }}
+                        >
+                            <Text>Year</Text>
+                        </Button>
                     </Box>
+                    <YearPicker
+                            open={filterYear}
+                            onClose={() => setFilterYear(false)}
+                    />
                     <Box>
                     <Select selectedValue={sorting} mx={{base: 0, md: "Sort"
                         }} onValueChange={e => dispatch(setSorting(e))} _selectedItem={{
@@ -228,8 +220,8 @@ export default function FilmList() {
 
                 <ShowFilmItem 
                     film={currentPost} 
-                    open={isModalOpen} 
-                    onCancel={handleCancel} 
+                    open={showFilm} 
+                    onCancel={hideFilm} 
                 />
 
                 <Button
