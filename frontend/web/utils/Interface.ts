@@ -20,8 +20,13 @@ export interface CreateFormProps {
     onCancel: () => void;
 }
 
-export interface CreateModalProps {
+export interface CreateShowFilmProps {
     film: Film;
     open: boolean;
     onCancel: () => void;
+}
+
+export interface CreateShowYearProps {
+    open: boolean;
+    onClose: () => void;
 }

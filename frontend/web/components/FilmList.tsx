@@ -1,17 +1,19 @@
-import React from "react";
 import { ADD_FILM, SEARCH_FILMS } from '../queries/filmQueries';
+import { Box, Button, CheckIcon, Divider, HStack, Heading, Input, Row, Select, Spinner, Text, VStack } from 'native-base';
 import { setGenre, setSorting, setTitle, setYear } from '../redux/actions';
 import { useDispatch, useSelector } from "react-redux";
 import { useMutation, useQuery } from '@apollo/client'
+
 import { CreateForm } from './AddFilm';
 import { Film, Values } from '../utils/Interface';
-
+import { Pressable } from "react-native";
 import { ShowFilmItem } from './FilmItem';
 import {Store} from "../redux/store";
+import {YearPicker} from './YearPicker';
+import {optionList} from '../helpers/helpers'
 import { useState } from 'react';
-import {Card, Column, Box, VStack, Divider, Input, Select, Button,CheckIcon, Row, Text, HStack, Spinner, Heading} from 'native-base';
-import { Pressable, TouchableOpacity } from "react-native";
-//const Option  = Select;
+import React from 'react';
+
 const PAGE_SIZE = 15;
 
 /** 
@@ -27,10 +29,11 @@ export default function FilmList() {
         cast: [""],
         genres: [""]
     });
-    const [isModalOpen, setIsModalOpen] = useState(false);
+    const [showFilm, setShowFilm] = useState(false);
+    const [filterYear, setFilterYear] = useState(false);
 
-    const handleCancel = () => {
-      setIsModalOpen(false);
+    const hideFilm = () => {
+      setShowFilm(false);
     };
 
     const dispatch = useDispatch();
@@ -94,24 +97,8 @@ export default function FilmList() {
 
     function handleClick(post: Film) {
         setCurrentPost(post);
-        setIsModalOpen(true);
+        setShowFilm(true);
     }
-    
-    // let body: any = [];
-    // body.push (
-    //     data.getFilteredPosts?.map((post: Film) => (
-    //         <Column xs={22} mt={6} className="my-4 mx-2">
-    //             <TouchableOpacity onPress={() => handleClick(post)}>
-    //             <Card pointerEvents="none">
-    //                 <Heading>
-    //                 {post.title}
-    //                 </Heading>
-    //                 <p>Year Released: {post.year? post.year: ""}</p>
-    //             </Card>
-    //             </TouchableOpacity>
-    //         </Column>
-    //     ))
-    // )
 
     let body: any = [];
     body.push (
@@ -178,23 +165,28 @@ export default function FilmList() {
                             <Select.Item label="Animated" value="Animated" />
                         </Select>
                     </Box>
-
-                    <Box margin={2}>
-                        <Input 
-                            value={year? year: ""} 
-                            placeholder="Search for year" 
-                            onChangeText={e => dispatch(setYear(e))}
-                        />
+                    <Box>
+                        <Button
+                            onPress={() => {
+                                setFilterYear(true);
+                            }}
+                        >
+                            <Text>Year</Text>
+                        </Button>
                     </Box>
-                    <Box margin={2}>
-                        <Select selectedValue={sorting} mx={{base: 0, md: "Sort"
-                            }} onValueChange={e => dispatch(setSorting(e))} _selectedItem={{
-                        bg: "cyan.600",
-                            endIcon: <CheckIcon size={4} />
-                            }} accessibilityLabel="Sort">
-                            <Select.Item label="Ascending" value="1" />
-                            <Select.Item label="Descending" value="-1" />
-                        </Select>
+                    <YearPicker
+                            open={filterYear}
+                            onClose={() => setFilterYear(false)}
+                    />
+                    <Box>
+                    <Select selectedValue={sorting} mx={{base: 0, md: "Sort"
+                        }} onValueChange={e => dispatch(setSorting(e))} _selectedItem={{
+                    bg: "cyan.600",
+                        endIcon: <CheckIcon size={4} />
+                        }} accessibilityLabel="Sort">
+                        <Select.Item label="Ascending" value="1" />
+                        <Select.Item label="Descending" value="-1" />
+                    </Select>
                     </Box>
                     <Box margin={2}>
                         <Button 
@@ -227,8 +219,8 @@ export default function FilmList() {
 
                 <ShowFilmItem 
                     film={currentPost} 
-                    open={isModalOpen} 
-                    onCancel={handleCancel} 
+                    open={showFilm} 
+                    onCancel={hideFilm} 
                 />
 
                 <Button

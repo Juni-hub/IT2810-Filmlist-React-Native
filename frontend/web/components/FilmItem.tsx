@@ -1,6 +1,7 @@
+import { Button, Center, Modal, Text } from "native-base";
+
+import { CreateShowFilmProps } from "../utils/Interface";
 import React from "react";
-import { Center, Button, Modal, Text } from "native-base";
-import { CreateModalProps } from "../utils/Interface";
 
 /** 
 * Const for showing a model with more information on a filmitem
@@ -9,7 +10,7 @@ import { CreateModalProps } from "../utils/Interface";
 * @param onCancel function to close the modal
 * @return a modal to show information about a filmitem 
 */
-export const ShowFilmItem: React.FC<CreateModalProps> = ({
+export const ShowFilmItem: React.FC<CreateShowFilmProps> = ({
     film,
     open,
     onCancel,

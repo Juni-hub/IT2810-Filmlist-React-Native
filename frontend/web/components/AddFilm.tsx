@@ -1,8 +1,7 @@
-import React from "react";
 import { CreateFormProps } from '../utils/Interface';
 import { Center, Button, Modal, Select, CheckIcon } from "native-base";
-import { CreateModalProps } from "../utils/Interface";
 import { List, Input, Alert, Text } from 'native-base';
+import React from 'react';
 
 /** 
 * Const for creating a form 
@@ -11,11 +10,6 @@ import { List, Input, Alert, Text } from 'native-base';
 * @param onCancel function to close the modal
 * @return modal for creating a filmitem
 */
-
-type FormData = {
-    title: string
-}
-
 export const CreateForm: React.FC<CreateFormProps> = ({
   open,
   onCreate,
