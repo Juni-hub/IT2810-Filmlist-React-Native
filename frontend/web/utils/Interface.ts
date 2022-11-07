@@ -6,12 +6,14 @@ export interface Film {
     genres: string[]
 }
 
+
 export interface Values {
     title: string;
-    description: string;
-    modifier: string;
+    year: string;
+    cast: string;
+    genres: string;
 }
-  
+
 export interface CreateFormProps {
     open: boolean;
     onCreate: (values: Values) => void;

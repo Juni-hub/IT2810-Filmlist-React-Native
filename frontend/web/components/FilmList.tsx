@@ -5,14 +5,13 @@ import { useDispatch, useSelector } from "react-redux";
 import { useMutation, useQuery } from '@apollo/client'
 
 import { CreateForm } from './AddFilm';
-import { Film } from '../utils/Interface';
+import { Film, Values } from '../utils/Interface';
 import { Pressable } from "react-native";
-import React from "react";
 import { ShowFilmItem } from './FilmItem';
 import {Store} from "../redux/store";
 import {YearPicker} from './YearPicker';
-import {optionList} from '../helpers/helpers'
 import { useState } from 'react';
+import React from 'react';
 
 const PAGE_SIZE = 15;
 
@@ -82,7 +81,7 @@ export default function FilmList() {
     * Creates a filmitem in the database
     * @param film to be created
     */
-    const onCreate = (film: any) => { 
+    const onCreate = (film: Values) => { 
         createPost({
             variables: {
                 title: film.title,
@@ -106,9 +105,9 @@ export default function FilmList() {
             <Box borderRadius="md">
                 <Pressable onPress={() => handleClick(post)}>
             <VStack space="4" divider={<Divider />}>
-                <Box px="4">
-                    <Heading>
-                    <Text>{post.title}</Text>
+                <Box px="4" marginBottom={10} marginTop={10}>
+                    <Heading marginBottom={2}>
+                        <Text>{post.title}</Text>
                     </Heading>
                     <Text>Year Released: {post.year? post.year: ""}</Text>
                 </Box>
@@ -137,66 +136,65 @@ export default function FilmList() {
         <>
         {!loading && !error && 
             <Box justifyContent="center">    
-                <Box  justifyContent="center">
-                    <Box >
+                <Box justifyContent="center">
+                    <Box marginTop={75} margin={2}>
                         <Input 
                             value={title? title: ""} 
                             placeholder="Search for title" 
                             onChangeText={e => dispatch(setTitle(e))}
-                           
                         />
                     </Box>
-                    <Box>
-                    <Select selectedValue={genre} mx={{base: 0, md: "Genre"
-                        }} onValueChange={e => dispatch(setGenre(e))} _selectedItem={{
-                    bg: "cyan.600",
-                        endIcon: <CheckIcon size={4} />
-                    }} accessibilityLabel="Select genre">
-                    <Select.Item label="Drama" value="Drama" />
-                    <Select.Item label="Documentary" value="Documentary" />
-                    <Select.Item label="Sports" value="Sports" />
-                    <Select.Item label="Silent" value="Silent" />
-                    <Select.Item label="Adventure" value="Adventure" />
-                    <Select.Item label="Western" value="Western" />
-                    <Select.Item label="Romance" value="Romance" />
-                    <Select.Item label="War" value="War" />
-                    <Select.Item label="Comedy" value="Comedy" />
-                    <Select.Item label="Horror" value="Horror" />
-                    <Select.Item label="Historical" value="Historical" />
-                    <Select.Item label="Animated" value="Animated" />
-                    </Select>
+                    <Box margin={2}>
+                        <Select selectedValue={genre} mx={{base: 0, md: "Genre"
+                            }} onValueChange={e => dispatch(setGenre(e))} _selectedItem={{
+                        bg: "cyan.600",
+                            endIcon: <CheckIcon size={4} />
+                        }} accessibilityLabel="Select genre">
+                            <Select.Item label="Drama" value="Drama" />
+                            <Select.Item label="Documentary" value="Documentary" />
+                            <Select.Item label="Sports" value="Sports" />
+                            <Select.Item label="Silent" value="Silent" />
+                            <Select.Item label="Adventure" value="Adventure" />
+                            <Select.Item label="Western" value="Western" />
+                            <Select.Item label="Romance" value="Romance" />
+                            <Select.Item label="War" value="War" />
+                            <Select.Item label="Comedy" value="Comedy" />
+                            <Select.Item label="Horror" value="Horror" />
+                            <Select.Item label="Historical" value="Historical" />
+                            <Select.Item label="Animated" value="Animated" />
+                        </Select>
                     </Box>
-                    <Box>
-                        <Button
+                    <Box margin={2}>
+                        <Select selectedValue={sorting} mx={{base: 0, md: "Sort"
+                            }} onValueChange={e => dispatch(setSorting(e))} _selectedItem={{
+                        bg: "cyan.600",
+                            endIcon: <CheckIcon size={4} />
+                            }} accessibilityLabel="Sort">
+                            <Select.Item label="Ascending" value="1" />
+                            <Select.Item label="Descending" value="-1" />
+                        </Select>
+                    </Box>
+                    <Box margin={2}>
+                        <Button   
                             onPress={() => {
                                 setFilterYear(true);
                             }}
                         >
-                            <Text>Year</Text>
+                            <Text>Filter on year</Text>
                         </Button>
                     </Box>
                     <YearPicker
                             open={filterYear}
                             onClose={() => setFilterYear(false)}
                     />
-                    <Box>
-                    <Select selectedValue={sorting} mx={{base: 0, md: "Sort"
-                        }} onValueChange={e => dispatch(setSorting(e))} _selectedItem={{
-                    bg: "cyan.600",
-                        endIcon: <CheckIcon size={4} />
-                        }} accessibilityLabel="Sort">
-                        <Select.Item label="Ascending" value="1" />
-                        <Select.Item label="Descending" value="-1" />
-                    </Select>
-                    </Box>
-                    <Box>
+                    <Box margin={2}>
                         <Button 
                             onPress={useReset}
                         >
-                           <Text>Reset Filters</Text> 
+                            <Text>Reset Filters</Text> 
                         </Button>
                     </Box>
-                    <Box>
+                    <Box margin={2}>
                         <Button
                             onPress={() => {
                                 setOpenCreate(true);
@@ -225,6 +223,7 @@ export default function FilmList() {
                 />
 
                 <Button
+                    margin={2}
                     disabled={loading}
                     onPress={() => (setPage(prev => prev-1))}
                 >
@@ -232,6 +231,7 @@ export default function FilmList() {
                 </Button>
 
                 <Button
+                    margin={2}
                     disabled={loading}
                     onPress={() => (setPage(prev => prev+1))}
                 >
