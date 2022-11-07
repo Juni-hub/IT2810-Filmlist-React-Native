@@ -10,7 +10,6 @@ import { Pressable } from "react-native";
 import { ShowFilmItem } from './FilmItem';
 import {Store} from "../redux/store";
 import {YearPicker} from './YearPicker';
-import {optionList} from '../helpers/helpers'
 import { useState } from 'react';
 import React from 'react';
 
@@ -127,10 +126,10 @@ export default function FilmList() {
         dispatch(setYear("0"))
         dispatch(setSorting("1"))
 
-        //title = useSelector ((state: Store) => state.title);;
-        //genre = useSelector ((state: Store) => state.genre);
-        //year = useSelector ((state: Store) => state.year);
-        //sorting = useSelector ((state: Store) => state.sorting);
+        title = "";
+        genre = "";
+        year = "0";
+        sorting = "1";
     }
     
     return (
