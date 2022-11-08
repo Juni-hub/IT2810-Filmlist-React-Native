@@ -30,3 +30,8 @@ export interface CreateShowYearProps {
     open: boolean;
     onClose: () => void;
 }
+
+export interface CreateFilmCard {
+    film: Film,
+    handleClick: (film: Film) => void;
+}
