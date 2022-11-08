@@ -1,14 +1,13 @@
 # Prosjekt 4
 
 ## Beskrivelse av applikasjonen
-
 Applikasjonen henter data fra en database og viser et utvalg filmer utgitt fra 1900 til i dag. Hver film vises på appen som et kort og er beskrevet med tittel og utgivelsesår. Hver film kan trykkes på for å vise mer informasjon om rollebesetning og sjanger. Det er mulig å finne en ønsket film ved å filtrere på en enkelt eller en kombinasjon av tittel, sjanger og utgivelsesår. Videre er det mulig å sortere dataene i stigende eller synkende rekkefølge etter utgivelsesår. Det er også mulig for brukeren å legge til sine egne filmer i databasen.
 
 ### Krav til innhold og utførelse i applikasjonen
 - Applikasjonen tillater å søke etter en film basert på tittel.
 - Applikasjonen tillater filtrering basert på sjanger og utgivelsesdato.
 - Applikasjonen tillater sortering basert på stigende eller synkende utgivelsesdato.
-- Applikasjonen viser 15 filmer av gangen for å kunne håndere den store datamengden. Brukeren kan få opp flere filmer ved å bla til videre sider nederst på siden.
+- Applikasjonen viser 8 filmer av gangen for å kunne håndere den store datamengden. Brukeren kan få opp flere filmer ved å bla til videre sider nederst på siden.
 - Applikasjonen gir mer detaljer om en gitt film ved å trykke på et filmkort.
 - Applikasjonen gir brukeren mulighet til å legge til egne filmer.
 
