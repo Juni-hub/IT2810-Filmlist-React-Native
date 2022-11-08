@@ -7,8 +7,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { useMutation, useQuery } from '@apollo/client'
 import { CreateForm } from './AddFilm';
 import { ShowFilmItem } from './FilmItem';
-import {Store} from "../redux/store";
-import {YearPicker} from './YearPicker';
+import { Store } from "../redux/store";
+import { YearPicker } from './YearPicker';
 import { useState } from 'react';
 import { FilmCard } from './FilmCard';
 

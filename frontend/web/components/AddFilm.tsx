@@ -1,7 +1,7 @@
+import React from 'react';
 import { CreateFormProps } from '../utils/Interface';
 import { Center, Button, Modal, Select, CheckIcon } from "native-base";
 import { Input, Text } from 'native-base';
-import React from 'react';
 
 /** 
 * Const for creating a new film item 

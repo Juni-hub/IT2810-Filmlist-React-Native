@@ -1,6 +1,6 @@
+import React from "react";
 import { Button, Center, Modal, Text } from "native-base";
 import { CreateShowFilmProps } from "../utils/Interface";
-import React from "react";
 
 /** 
 * Const for showing a modal with more information on a filmitem
