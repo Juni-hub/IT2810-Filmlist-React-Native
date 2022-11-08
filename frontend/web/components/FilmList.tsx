@@ -1,5 +1,5 @@
 import { ADD_FILM, SEARCH_FILMS } from '../queries/filmQueries';
-import { Box, Button, CheckIcon, Divider, HStack, Heading, Input, Row, Select, Spinner, Text, VStack, Column, ScrollView, Flex, Center } from 'native-base';
+import { Box, Button, CheckIcon, Divider, HStack, Heading, Input, Row, Select, Spinner, Text, VStack, Column, ScrollView, Flex, Center, } from 'native-base';
 import { Film, Values } from '../utils/Interface';
 import { setGenre, setSorting, setTitle, setYear } from '../redux/actions';
 import { useDispatch, useSelector } from "react-redux";
@@ -167,45 +167,47 @@ export default function FilmList() {
                         </Select>
                     </Box>
 
-                    <Box margin={1}>
-                        <Button   
-                            onPress={() => {
-                                setFilterYear(true);
-                            }}
-                        >
-                            <Text>Filter on year</Text>
-                        </Button>
-                    </Box>
-                    <YearPicker
-                            open={filterYear}
-                            onClose={() => setFilterYear(false)}
-                    />
-                    <Box margin={1}>
-                        <Button 
-                            onPress={useReset}
-                        >
-                            <Text>Reset Filters</Text> 
-                        </Button>
-                    </Box>
-                    <Box margin={1}>
-                        <Button
-                            onPress={() => {
-                                setOpenCreate(true);
-                            }}
-                        >
-                            <Text>Add New Film</Text>
-                        </Button>
-                        <CreateForm
-                            open={openCreate}
-                            onCreate={onCreate}
-                            onCancel={() => {
-                                setOpenCreate(false);
-                            }}
-                        /> 
-                    </Box>
+                    <Flex direction='row'>
+                        <Box margin={1}>
+                            <Button  
+                                onPress={() => {
+                                    setFilterYear(true);
+                                }}
+                            >
+                                <Text>Filter on year</Text>
+                            </Button>
+                        </Box>
+                        <YearPicker
+                                open={filterYear}
+                                onClose={() => setFilterYear(false)}
+                        />
+                        <Box margin={1}>
+                            <Button 
+                                onPress={useReset}
+                            >
+                                <Text>Reset Filters</Text> 
+                            </Button>
+                        </Box>
+                        <Box margin={1}>
+                            <Button
+                                onPress={() => {
+                                    setOpenCreate(true);
+                                }}
+                            >
+                                <Text>Add New Film</Text>
+                            </Button>
+                            <CreateForm
+                                open={openCreate}
+                                onCreate={onCreate}
+                                onCancel={() => {
+                                    setOpenCreate(false);
+                                }}
+                            /> 
+                        </Box>
+                    </Flex>
                 </Box>
 
-                <ScrollView w="100%" h="80">
+                <ScrollView w="100%" h="sm">
                     {data.getFilteredPosts?.map((post: Film) => (
                         <FilmCard
                             film={post}
