@@ -1,24 +1,21 @@
+import React from 'react';
 import { ADD_FILM, SEARCH_FILMS } from '../queries/filmQueries';
-import { Box, Button, CheckIcon, Divider, HStack, Heading, Input, Row, Select, Spinner, Text, VStack, Column, ScrollView, Flex, Center, } from 'native-base';
-import { Film, Values } from '../utils/Interface';
+import { Box, Button, CheckIcon, HStack, Heading, Input, Select, Spinner, Text, ScrollView, Flex, ChevronDownIcon } from 'native-base';
+import { CreateFilm, Film } from '../utils/Interface';
 import { setGenre, setSorting, setTitle, setYear } from '../redux/actions';
 import { useDispatch, useSelector } from "react-redux";
 import { useMutation, useQuery } from '@apollo/client'
-
 import { CreateForm } from './AddFilm';
-import { Pressable } from "react-native";
-import React from 'react';
 import { ShowFilmItem } from './FilmItem';
 import {Store} from "../redux/store";
 import {YearPicker} from './YearPicker';
 import { useState } from 'react';
 import { FilmCard } from './FilmCard';
-import { flexbox } from 'native-base/lib/typescript/theme/styled-system';
 
 const PAGE_SIZE = 8;
 
 /** 
-* Main component to show list of filmitems on React application
+* Main component to show list of filmitems on React Native application
 */
 export default function FilmList() {
     const [page, setPage] = useState(0);
@@ -67,7 +64,7 @@ export default function FilmList() {
             <HStack space={2} justifyContent="center">
                 <Spinner accessibilityLabel="Loading posts" />
                     <Heading color="primary.500" fontSize="md">
-                        Loading
+                        <Text>Loading...</Text>
                     </Heading>
             </HStack>
         )
@@ -76,7 +73,9 @@ export default function FilmList() {
    if (error) {
         console.log(error)
         return (
-            <h5 style={{color: "#ffffff"}}>Something went wrong when trying to connect to the server...</h5>
+            <h5 style={{color: "#ffffff"}}>
+                Something went wrong when trying to connect to the server...
+            </h5>
         )
     }
 
@@ -84,7 +83,7 @@ export default function FilmList() {
     * Creates a filmitem in the database
     * @param film to be created
     */
-    const onCreate = (film: Values) => { 
+    const onCreate = (film: CreateFilm) => { 
         createPost({
             variables: {
                 title: film.title,
@@ -121,30 +120,42 @@ export default function FilmList() {
     return (
         <>
         {!loading && !error && 
-            <Box justifyContent="center" margin={4}>    
-                <Box justifyContent="center" paddingBottom={4}>
-                    <Heading margin={4} marginTop={50}>Filmdatabase</Heading>
+            <Box justifyContent="center" margin={4} >    
+                <Box paddingBottom={3}>
+                    <Heading margin={4} color={"white"} marginBottom={5} marginTop={55}>Filmdatabase</Heading>
                     <Box margin={1}>
-                        <Input 
-                            borderColor={"black"}
+                        <Input
+                            backgroundColor="white"  
+                            borderColor={"600"}
                             value={searchTitle}
                             placeholder="Search for title"
-                            fontSize={18}
-                            placeholderTextColor={"black"}
+                            accessibilityLabel="Search by title"
+                            fontSize={15}
                             onChangeText={(e: string) => setSearchTitle(e)}
-                            InputRightElement={<Button size="xs" rounded="none" w="1/4" h="full" onPress={() => dispatch(setTitle(searchTitle))}>
-                            {<Text>Search</Text>}
-                            </Button>}
+                            InputRightElement={
+                                <Button size="xs" rounded="none" w="1/4" h="full" onPress={() => dispatch(setTitle(searchTitle))}>
+                                    { <Text color={"white"}>Search</Text> }
+                                </Button>
+                            }
                         />
                     </Box>
-
-                    <Box margin={1}>
-                            <Select selectedValue={genre} mx={{base: 0, md: "Genre"
-                                }} borderColor={"black"} placeholder="Filter by genre" fontSize={15} placeholderTextColor={"black"} onValueChange={e => dispatch(setGenre(e))} _selectedItem={{
-                            bg: "cyan.600",
-                            rounded: "10",
-                                endIcon: <CheckIcon color={"black"} size={6} />
-                            }} accessibilityLabel="Select genre">
+                    <Flex direction='row' justifyContent="center">
+                        <Box margin={2} width="45%">
+                            <Select 
+                                backgroundColor="white" 
+                                selectedValue={genre} 
+                                mx={{base: 0, md: "Genre"}} 
+                                borderColor={"600"}
+                                placeholder="Filter genre" 
+                                fontSize={15} 
+                                onValueChange={e => dispatch(setGenre(e))} 
+                                _selectedItem={{
+                                    bg: "cyan.600",
+                                    rounded: "10",
+                                    endIcon: <CheckIcon color={"black"} size={6} />
+                                }} 
+                                accessibilityLabel="Select genre"
+                            >
                                 <Select.Item label="Drama" value="Drama" />
                                 <Select.Item label="Documentary" value="Documentary" />
                                 <Select.Item label="Sports" value="Sports" />
@@ -158,49 +169,63 @@ export default function FilmList() {
                                 <Select.Item label="Historical" value="Historical" />
                                 <Select.Item label="Animated" value="Animated" />
                             </Select>
-                    </Box>
-
-                    <Box margin={1}>
-                        <Select selectedValue={sorting} mx={{base: 0, md: "Sort"
-                                }} borderColor={"black"} placeholderTextColor={"black"} fontSize={15} onValueChange={e => dispatch(setSorting(e))} _selectedItem={{
-                            bg: "cyan.600",
-                            rounded: "10",
-                                endIcon: <CheckIcon color={"black"} size={6} />
-                                }} accessibilityLabel="Sort">
+                        </Box>
+                        <Box margin={2} width="45%">
+                            <Select 
+                                backgroundColor="white" 
+                                selectedValue={sorting} 
+                                mx={{base: 0, md: "Sort"
+                                }} 
+                                borderColor={"600"} 
+                                fontSize={15} 
+                                onValueChange={e => dispatch(setSorting(e))} 
+                                _selectedItem={{
+                                    bg: "cyan.600",
+                                    rounded: "10",
+                                    endIcon: <CheckIcon color={"black"} size={6} />
+                                }} 
+                                accessibilityLabel="Sort on year"
+                            >
                                 <Select.Item label="Ascending" value="1" />
                                 <Select.Item label="Descending" value="-1" />
-                        </Select>
-                    </Box>
-
-                    <Flex direction='row'>
-                        <Box margin={1}>
+                            </Select>
+                        </Box>
+                    </Flex>
+                    <Flex direction='row' justifyContent="center">
+                        <Box marginTop={2} margin={1}>
                             <Button  
+                                backgroundColor="white" 
+                                variant="outline"
+                                borderColor={"600"}
+                                borderWidth="1"
                                 fontSize={15}
                                 onPress={() => {
                                     setFilterYear(true);
                                 }}
+                                accessibilityLabel="Filter on year"
                             >
-                                <Text>Filter on year</Text>
+                                <Text color={"grey"}>Filter year <ChevronDownIcon paddingLeft={1} color={"grey"} size={6}/></Text>
                             </Button>
                         </Box>
                         <YearPicker
-                                open={filterYear}
-                                onClose={() => setFilterYear(false)}
+                            open={filterYear}
+                            onClose={() => setFilterYear(false)}
                         />
-                        <Box margin={1}>
+                        <Box marginTop={2} margin={1}>
                             <Button 
                                 onPress={useReset}
+                                borderColor={"600"}
+                                accessibilityLabel="Reset filters"
                             >
-                                <Text>Reset Filters</Text> 
+                                <Text color={"white"}>Reset Filters</Text> 
                             </Button>
                         </Box>
-                        <Box margin={1}>
+                        <Box marginTop={2} margin={1}>
                             <Button
-                                onPress={() => {
-                                    setOpenCreate(true);
-                                }}
+                                onPress={() => { setOpenCreate(true); }}
+                                accessibilityLabel="Create new film"
                             >
-                                <Text>Add New Film</Text>
+                                <Text color={"white"}>Add New Film</Text>
                             </Button>
                             <CreateForm
                                 open={openCreate}
@@ -212,16 +237,15 @@ export default function FilmList() {
                         </Box>
                     </Flex>
                 </Box>
-
                 <ScrollView w="100%" h="sm">
                     {data.getFilteredPosts?.map((post: Film) => (
                         <FilmCard
+                            key={post._id}
                             film={post}
                             handleClick={() => handleClick(post)}
                         /> 
                     ))}
                 </ScrollView>
-
                 <ShowFilmItem 
                     film={currentPost} 
                     open={showFilm} 
@@ -233,15 +257,14 @@ export default function FilmList() {
                         disabled={loading}
                         onPress={() => (setPage(prev => prev-1))}
                     >
-                        <Text>Previous</Text>
+                        <Text color={"white"}>Previous</Text>
                     </Button>
-
                     <Button
                         margin={1}
                         disabled={loading}
                         onPress={() => (setPage(prev => prev+1))}
                     >
-                        <Text>Next</Text>
+                        <Text color={"white"}>Next</Text>
                     </Button>
                 </Box>
             </Box>
