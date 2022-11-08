@@ -104,6 +104,9 @@ Redux er et Javascript-bibliotek brukt for Local State Management i applikasjone
 #### Design komponenter (Native-Base)
 I prosjekt 3 brukte gruppen React UI bibliotekene Ant Design og Bootstrap for å designe nettsiden. Da vi byttet til React Native måtte vi bytte til et annet UI bibliotek grunnet at vi fikk problemer med Ant Design. Vi byttet til et bibliotek kalt Native-Base som gir støtte for ulike komponenter både for React og React Native. Grunnen til at vi valgte NativeBase var fordi mange av komponetene vi brukte i Ant Design fantes også i NativeBase. Dermed måtte vi ikke endre så mye på koden, men bare på importene. Fra NativeBase har vi hovedsaklig brukt komponentene Card, Modal og Button. 
 
+## Responsiv layout
+Layouten er designet slik at den skal passe til forskjellige skjermstørrelser. Dette er gjort ved å bruke design tokens og breakpoints, som hjelper til å holde designet konsistent, men likevel responsivt, på alle plattformer.
+
 ### Testing
 Prosjektet er testet ved bruk av Cypress for ende-til-endetesting og Jest for komponenttesting. I tillegg har vi bruke CI pipeline i GitLab for å passe på at koden i main fungerer gjennom utviklingsprosessen.
 
