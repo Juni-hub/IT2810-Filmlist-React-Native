@@ -63,7 +63,7 @@ Selve funksjonene for å hente eller endre dataen i databasen er skrevet i filen
 Videre har gruppen skrevet en Mutation kalt createPost som legger til nye filobjekter i databasen. Filmobjektet må ha en tittel, men det er valgfritt om det har et årstall, rollebesetning eller sjanger.
 
 ## Frontend
-Fra prosjekt 3 til prosjekt 4 har vi byttet React-klienten med React Native-klient. Vi har tatt utgangspunkt i komponentene og oppsettet fra prosjekt 3, men gjort endringer slik at applikasjonen kan kjøres på mobil. Vi valgte å bytte design-bibliotekene Ant Design og Bootstrap til Native-Base siden Native-Base er en av de mest populære design-bibliotekene for React Native-applikasjoner og vi ønsket å lære å bruke det. Ellers hadde de fleste bibliotekene vi brukte i prosjekt 3 støtte for React Native, så vi kunne fortsette å bruke dem.
+Fra prosjekt 3 til prosjekt 4 har vi byttet React-klienten med React Native-klient. Vi har tatt utgangspunkt i komponentene og layouten fra prosjekt 3, men gjort endringer slik at applikasjonen kan kjøres på en mobil enhet. Vi valgte å bytte design-bibliotekene Ant Design og Bootstrap til Native-Base ettersom Native-Base er en av de mest populære design-bibliotekene for React Native-applikasjoner. Resterende biblioteker som ble brukt i prosjekt 3, herunder redux for Local State Management, cypress for ende-til-ende testing og jest for enhetstesting, er støttet i React Native og derfor fremdeles brukt.
 
 ### Frontend fil struktur
 ```
@@ -71,14 +71,17 @@ cypress
 components
 │   AddFilm.tsx
 │   FilmItem.tsx
-│   Films.tsx
+│   FilmList.tsx
+|   FilmCard.tsx
 |   YearPicker.tsx
 queries
 │   filmQueries.ts
 redux
+|   actions.ts
+|   store.ts
 test
 utils
-│   Interfaces.ts
+│   Interface.ts
 App.tsx
 ```
 
@@ -92,7 +95,7 @@ App.tsx
 ### Beskrivelse av bruk av teknologier
 #### React m/ Typescript
 
-Applikasjonen bruker React Native for å lage UI komponentene som brukeren ser på nettsiden. React Native er implementert med Typescript, som er et programmeringsspråk bygget på JavaScript ved at det er lagt til statiske type definisjoner.
+Applikasjonen bruker React Native for å lage UI komponentene som brukeren ser på nettsiden. React Native er implementert med Typescript, som er et programmeringsspråk basert på JavaScript ved at det er lagt til statiske type definisjoner.
 
 #### Apollo Client
 
@@ -102,10 +105,10 @@ Apollo Client brukes i React applikasjonen for å koble til GraphQL APIet. I kom
 Redux er et Javascript-bibliotek brukt for Local State Management i applikasjonen. Redux er brukt til å lagre filtrene brukeren har lagt inn.
 
 #### Design komponenter (Native-Base)
-I prosjekt 3 brukte gruppen React UI bibliotekene Ant Design og Bootstrap for å designe nettsiden. Da vi byttet til React Native måtte vi bytte til et annet UI bibliotek grunnet at vi fikk problemer med Ant Design. Vi byttet til et bibliotek kalt Native-Base som gir støtte for ulike komponenter både for React og React Native. Grunnen til at vi valgte NativeBase var fordi mange av komponetene vi brukte i Ant Design fantes også i NativeBase. Dermed måtte vi ikke endre så mye på koden, men bare på importene. Fra NativeBase har vi hovedsaklig brukt komponentene Card, Modal og Button. 
+I prosjekt 3 brukte gruppen React UI bibliotekene Ant Design og Bootstrap for å designe nettsiden. I prosjekt 4 skulle vi forandre applikasjonen til en mobil versjon og byttet derfor til React Native. På grunn av dette valgte gruppen å bruke et annet UI bibliotek da Ant Design er utviklet for webapplikasjoner. Gruppen byttet til et UI bibliotek kalt Native-Base som gir støtte for ulike komponenter for React Native. Grunnen til at vi valgte Native-Base var fordi flere av komponetene vi brukte i Ant Design er støttet i Native-Base. Dermed kunne mye av koden fra prosjekt 3 gjenbrukes i de nye komponentene. Fra Native-Base har vi hovedsaklig brukt komponentene Card, Modal og Button. 
 
 ## Responsiv layout
-Layouten er designet slik at den skal passe til forskjellige skjermstørrelser. Dette er gjort ved å bruke design tokens og breakpoints, som hjelper til å holde designet konsistent, men likevel responsivt, på alle plattformer.
+Layouten er designet slik at den skal passe til forskjellige skjermstørrelser. Dette er gjort ved å bruke design tokens og breakpoints, som hjelper til å holde designet konsistent og responsivt på alle plattformer.
 
 ### Testing
 Prosjektet er testet ved bruk av Cypress for ende-til-endetesting og Jest for komponenttesting. I tillegg har vi bruke CI pipeline i GitLab for å passe på at koden i main fungerer gjennom utviklingsprosessen.
@@ -124,7 +127,6 @@ $ npm test
 ```
 
 ## Diskusjon
-
 ### Universell utforming
 
 Universell utforming handler om at applikasjoner skal lages på en måte som gjør de tilgjengelige for alle, uavhengig av faktorer som alder, funksjonsevne eller utdanningsnivå. Web Content Accessibility Guidelines (WCAG) er en standard for å sikre universell utforming på nettsider. Retningslinjene er bygget opp av fire prinsipper. Under listes prinsippene og tiltakene gruppen har gjort for å sikre at de følges.  
