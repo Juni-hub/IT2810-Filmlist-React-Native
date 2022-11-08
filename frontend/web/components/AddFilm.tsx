@@ -43,24 +43,36 @@ export const CreateForm: React.FC<CreateFormProps> = ({
           <Modal.Header><Text>Chosen film</Text></Modal.Header>
           <Modal.Body>
             <Input
+                borderColor={"black"}
+                fontSize={15}
+                placeholderTextColor={"black"}
                 marginBottom={2}  
                 variant="outline"
                 onChangeText={handleTitle}
                 placeholder="Title"
             />
             <Input
+                borderColor={"black"}
+                fontSize={15}
+                placeholderTextColor={"black"}
                 marginBottom={2}
                 variant="outline"
                 onChangeText={handleYear}
                 placeholder="Year"
             />
             <Input
+                borderColor={"black"}
+                fontSize={15}
+                placeholderTextColor={"black"}
                 marginBottom={2}
                 variant="outline"
                 onChangeText={handleCast}
                 placeholder="Cast"
             />
             <Select 
+              borderColor={"black"}
+              fontSize={15}
+              placeholderTextColor={"black"}
               placeholder="Genres" 
               mx={{base: 0, md: "Genre"}} 
               onValueChange={handleGenres} 
@@ -84,10 +96,10 @@ export const CreateForm: React.FC<CreateFormProps> = ({
             </Select>
           </Modal.Body>
           <Modal.Footer>
-            <Button marginRight={2} variant="outline" colorScheme="blueGray" onPress={onCancel}>
+            <Button borderColor={"black"} marginRight={2} variant="outline" colorScheme="blueGray" onPress={onCancel}>
                 <Text>Close</Text>
             </Button>
-            <Button variant="outline" colorScheme="blueGray" onPress={createFilm}>
+            <Button borderColor={"black"} variant="outline" colorScheme="blueGray" onPress={createFilm}>
                 <Text>Add film</Text>
             </Button>
           </Modal.Footer>

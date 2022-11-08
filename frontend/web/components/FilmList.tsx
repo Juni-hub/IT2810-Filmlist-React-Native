@@ -122,12 +122,15 @@ export default function FilmList() {
         <>
         {!loading && !error && 
             <Box justifyContent="center" margin={4}>    
-                <Box justifyContent="center">
+                <Box justifyContent="center" paddingBottom={4}>
                     <Heading margin={4} marginTop={50}>Filmdatabase</Heading>
                     <Box margin={1}>
                         <Input 
+                            borderColor={"black"}
                             value={searchTitle}
-                            placeholder="Search for title" 
+                            placeholder="Search for title"
+                            fontSize={18}
+                            placeholderTextColor={"black"}
                             onChangeText={(e: string) => setSearchTitle(e)}
                             InputRightElement={<Button size="xs" rounded="none" w="1/4" h="full" onPress={() => dispatch(setTitle(searchTitle))}>
                             {<Text>Search</Text>}
@@ -137,9 +140,10 @@ export default function FilmList() {
 
                     <Box margin={1}>
                             <Select selectedValue={genre} mx={{base: 0, md: "Genre"
-                                }} placeholder="Filter by genre" onValueChange={e => dispatch(setGenre(e))} _selectedItem={{
+                                }} borderColor={"black"} placeholder="Filter by genre" fontSize={15} placeholderTextColor={"black"} onValueChange={e => dispatch(setGenre(e))} _selectedItem={{
                             bg: "cyan.600",
-                                endIcon: <CheckIcon size={4} />
+                            rounded: "10",
+                                endIcon: <CheckIcon color={"black"} size={6} />
                             }} accessibilityLabel="Select genre">
                                 <Select.Item label="Drama" value="Drama" />
                                 <Select.Item label="Documentary" value="Documentary" />
@@ -158,9 +162,10 @@ export default function FilmList() {
 
                     <Box margin={1}>
                         <Select selectedValue={sorting} mx={{base: 0, md: "Sort"
-                                }} onValueChange={e => dispatch(setSorting(e))} _selectedItem={{
+                                }} borderColor={"black"} placeholderTextColor={"black"} fontSize={15} onValueChange={e => dispatch(setSorting(e))} _selectedItem={{
                             bg: "cyan.600",
-                                endIcon: <CheckIcon size={4} />
+                            rounded: "10",
+                                endIcon: <CheckIcon color={"black"} size={6} />
                                 }} accessibilityLabel="Sort">
                                 <Select.Item label="Ascending" value="1" />
                                 <Select.Item label="Descending" value="-1" />
@@ -170,6 +175,7 @@ export default function FilmList() {
                     <Flex direction='row'>
                         <Box margin={1}>
                             <Button  
+                                fontSize={15}
                                 onPress={() => {
                                     setFilterYear(true);
                                 }}
@@ -221,22 +227,23 @@ export default function FilmList() {
                     open={showFilm} 
                     onCancel={hideFilm} 
                 />
+                <Box paddingTop={4}>
+                    <Button
+                        margin={1}
+                        disabled={loading}
+                        onPress={() => (setPage(prev => prev-1))}
+                    >
+                        <Text>Previous</Text>
+                    </Button>
 
-                <Button
-                    margin={1}
-                    disabled={loading}
-                    onPress={() => (setPage(prev => prev-1))}
-                >
-                    <Text>Previous</Text>
-                </Button>
-
-                <Button
-                    margin={1}
-                    disabled={loading}
-                    onPress={() => (setPage(prev => prev+1))}
-                >
-                    <Text>Next</Text>
-                </Button>
+                    <Button
+                        margin={1}
+                        disabled={loading}
+                        onPress={() => (setPage(prev => prev+1))}
+                    >
+                        <Text>Next</Text>
+                    </Button>
+                </Box>
             </Box>
         }
         </>
