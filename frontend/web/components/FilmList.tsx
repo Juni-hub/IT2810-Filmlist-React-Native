@@ -1,5 +1,5 @@
 import { ADD_FILM, SEARCH_FILMS } from '../queries/filmQueries';
-import { Box, Button, CheckIcon, Divider, HStack, Heading, Input, InputRightElement, Row, Select, Spinner, Text, VStack } from 'native-base';
+import { Box, Button, CheckIcon, Divider, HStack, Heading, Input, Row, Select, Spinner, Text, VStack, Column, ScrollView, Flex, Center } from 'native-base';
 import { Film, Values } from '../utils/Interface';
 import { setGenre, setSorting, setTitle, setYear } from '../redux/actions';
 import { useDispatch, useSelector } from "react-redux";
@@ -12,8 +12,10 @@ import { ShowFilmItem } from './FilmItem';
 import {Store} from "../redux/store";
 import {YearPicker} from './YearPicker';
 import { useState } from 'react';
+import { FilmCard } from './FilmCard';
+import { flexbox } from 'native-base/lib/typescript/theme/styled-system';
 
-const PAGE_SIZE = 15;
+const PAGE_SIZE = 8;
 
 /** 
 * Main component to show list of filmitems on React application
@@ -100,24 +102,6 @@ export default function FilmList() {
         setShowFilm(true);
     }
 
-    let body: any = [];
-    body.push (
-        data.getFilteredPosts?.map((post: Film) => (
-            <Box borderRadius="md">
-                <Pressable onPress={() => handleClick(post)}>
-            <VStack space="4" divider={<Divider />}>
-                <Box px="4" marginBottom={10} marginTop={10}>
-                    <Heading marginBottom={2}>
-                        <Text>{post.title}</Text>
-                    </Heading>
-                    <Text>Year Released: {post.year? post.year: ""}</Text>
-                </Box>
-            </VStack>
-            </Pressable>
-            </Box>
-        ))
-    )
-
     /** 
     * Resets the filters in redux
     */
@@ -137,49 +121,53 @@ export default function FilmList() {
     return (
         <>
         {!loading && !error && 
-            <Box justifyContent="center">    
+            <Box justifyContent="center" margin={4}>    
                 <Box justifyContent="center">
-                    <Box marginTop={75} margin={2}>
+                    <Heading margin={4} marginTop={50}>Filmdatabase</Heading>
+                    <Box margin={1}>
                         <Input 
                             value={searchTitle}
                             placeholder="Search for title" 
                             onChangeText={(e: string) => setSearchTitle(e)}
-                            InputRightElement={<Button size="xs" rounded="none" w="1/5" h="full" onPress={() => dispatch(setTitle(searchTitle))}>
+                            InputRightElement={<Button size="xs" rounded="none" w="1/4" h="full" onPress={() => dispatch(setTitle(searchTitle))}>
                             {<Text>Search</Text>}
                             </Button>}
                         />
                     </Box>
-                    <Box margin={2}>
-                        <Select selectedValue={genre} mx={{base: 0, md: "Genre"
-                            }} placeholder="Filter by genre"  onValueChange={e => dispatch(setGenre(e))} _selectedItem={{
-                        bg: "cyan.600",
-                            endIcon: <CheckIcon size={4} />
-                        }} accessibilityLabel="Select genre">
-                            <Select.Item label="Drama" value="Drama" />
-                            <Select.Item label="Documentary" value="Documentary" />
-                            <Select.Item label="Sports" value="Sports" />
-                            <Select.Item label="Silent" value="Silent" />
-                            <Select.Item label="Adventure" value="Adventure" />
-                            <Select.Item label="Western" value="Western" />
-                            <Select.Item label="Romance" value="Romance" />
-                            <Select.Item label="War" value="War" />
-                            <Select.Item label="Comedy" value="Comedy" />
-                            <Select.Item label="Horror" value="Horror" />
-                            <Select.Item label="Historical" value="Historical" />
-                            <Select.Item label="Animated" value="Animated" />
-                        </Select>
+
+                    <Box margin={1}>
+                            <Select selectedValue={genre} mx={{base: 0, md: "Genre"
+                                }} placeholder="Filter by genre" onValueChange={e => dispatch(setGenre(e))} _selectedItem={{
+                            bg: "cyan.600",
+                                endIcon: <CheckIcon size={4} />
+                            }} accessibilityLabel="Select genre">
+                                <Select.Item label="Drama" value="Drama" />
+                                <Select.Item label="Documentary" value="Documentary" />
+                                <Select.Item label="Sports" value="Sports" />
+                                <Select.Item label="Silent" value="Silent" />
+                                <Select.Item label="Adventure" value="Adventure" />
+                                <Select.Item label="Western" value="Western" />
+                                <Select.Item label="Romance" value="Romance" />
+                                <Select.Item label="War" value="War" />
+                                <Select.Item label="Comedy" value="Comedy" />
+                                <Select.Item label="Horror" value="Horror" />
+                                <Select.Item label="Historical" value="Historical" />
+                                <Select.Item label="Animated" value="Animated" />
+                            </Select>
                     </Box>
-                    <Box margin={2}>
+
+                    <Box margin={1}>
                         <Select selectedValue={sorting} mx={{base: 0, md: "Sort"
-                            }} onValueChange={e => dispatch(setSorting(e))} _selectedItem={{
-                        bg: "cyan.600",
-                            endIcon: <CheckIcon size={4} />
-                            }} accessibilityLabel="Sort">
-                            <Select.Item label="Ascending" value="1" />
-                            <Select.Item label="Descending" value="-1" />
+                                }} onValueChange={e => dispatch(setSorting(e))} _selectedItem={{
+                            bg: "cyan.600",
+                                endIcon: <CheckIcon size={4} />
+                                }} accessibilityLabel="Sort">
+                                <Select.Item label="Ascending" value="1" />
+                                <Select.Item label="Descending" value="-1" />
                         </Select>
                     </Box>
-                    <Box margin={2}>
+
+                    <Box margin={1}>
                         <Button   
                             onPress={() => {
                                 setFilterYear(true);
@@ -192,14 +180,14 @@ export default function FilmList() {
                             open={filterYear}
                             onClose={() => setFilterYear(false)}
                     />
-                    <Box margin={2}>
+                    <Box margin={1}>
                         <Button 
                             onPress={useReset}
                         >
                             <Text>Reset Filters</Text> 
                         </Button>
                     </Box>
-                    <Box margin={2}>
+                    <Box margin={1}>
                         <Button
                             onPress={() => {
                                 setOpenCreate(true);
@@ -217,9 +205,14 @@ export default function FilmList() {
                     </Box>
                 </Box>
 
-                <Row justifyContent="center" alignItems = 'center'>
-                    {body}
-                </Row>
+                <ScrollView w="100%" h="80">
+                    {data.getFilteredPosts?.map((post: Film) => (
+                        <FilmCard
+                            film={post}
+                            handleClick={() => handleClick(post)}
+                        /> 
+                    ))}
+                </ScrollView>
 
                 <ShowFilmItem 
                     film={currentPost} 
@@ -228,7 +221,7 @@ export default function FilmList() {
                 />
 
                 <Button
-                    margin={2}
+                    margin={1}
                     disabled={loading}
                     onPress={() => (setPage(prev => prev-1))}
                 >
@@ -236,7 +229,7 @@ export default function FilmList() {
                 </Button>
 
                 <Button
-                    margin={2}
+                    margin={1}
                     disabled={loading}
                     onPress={() => (setPage(prev => prev+1))}
                 >
