@@ -1,10 +1,10 @@
+import React from 'react';
 import { CreateFormProps } from '../utils/Interface';
 import { Center, Button, Modal, Select, CheckIcon } from "native-base";
-import { List, Input, Text } from 'native-base';
-import React from 'react';
+import { Input, Text } from 'native-base';
 
 /** 
-* Const for creating a form 
+* Const for creating a new film item 
 * @param open boolean to decide if modal should be open or closed
 * @param onCreate function to create filmitem
 * @param onCancel function to close the modal
@@ -36,39 +36,54 @@ export const CreateForm: React.FC<CreateFormProps> = ({
     }
 
     return(
-        <Center>
+      <Center>
         <Modal isOpen={open} onClose={onCancel}>
-        <Modal.Content maxWidth="400px">
-          <Modal.CloseButton />
-          <Modal.Header><Text>Chosen film</Text></Modal.Header>
-          <Modal.Body>
-            <Input
+          <Modal.Content maxWidth="400px">
+            <Modal.CloseButton />
+            <Modal.Header>
+              <Text>Chosen film</Text>
+            </Modal.Header>
+            <Modal.Body>
+              <Input
+                borderColor={"black"}
+                fontSize={15}
+                placeholderTextColor={"black"}
                 marginBottom={2}  
                 variant="outline"
                 onChangeText={handleTitle}
                 placeholder="Title"
-            />
-            <Input
+              />
+              <Input
+                borderColor={"black"}
+                fontSize={15}
+                placeholderTextColor={"black"}
                 marginBottom={2}
                 variant="outline"
                 onChangeText={handleYear}
                 placeholder="Year"
-            />
-            <Input
+              />
+              <Input
+                borderColor={"black"}
+                fontSize={15}
+                placeholderTextColor={"black"}
                 marginBottom={2}
                 variant="outline"
                 onChangeText={handleCast}
                 placeholder="Cast"
-            />
-            <Select 
-              placeholder="Genres" 
-              mx={{base: 0, md: "Genre"}} 
-              onValueChange={handleGenres} 
-              _selectedItem={{
-                bg: "cyan.600",
-                  endIcon: <CheckIcon size={4} />
-              }} 
-              accessibilityLabel="Select genre">
+              />
+              <Select 
+                borderColor={"black"}
+                fontSize={15}
+                placeholderTextColor={"black"}
+                placeholder="Genres" 
+                mx={{base: 0, md: "Genre"}} 
+                onValueChange={handleGenres} 
+                _selectedItem={{
+                  bg: "cyan.600",
+                    endIcon: <CheckIcon size={4} />
+                }} 
+                accessibilityLabel="Select genre"
+              >
                 <Select.Item label="Drama" value="Drama" />
                 <Select.Item label="Documentary" value="Documentary" />
                 <Select.Item label="Sports" value="Sports" />
@@ -81,18 +96,18 @@ export const CreateForm: React.FC<CreateFormProps> = ({
                 <Select.Item label="Horror" value="Horror" />
                 <Select.Item label="Historical" value="Historical" />
                 <Select.Item label="Animated" value="Animated" />
-            </Select>
+              </Select>
           </Modal.Body>
           <Modal.Footer>
-            <Button marginRight={2} variant="outline" colorScheme="blueGray" onPress={onCancel}>
-                <Text>Close</Text>
+            <Button borderColor={"black"} marginRight={2} variant="outline" colorScheme="blueGray" onPress={onCancel}>
+              <Text>Close</Text>
             </Button>
-            <Button variant="outline" colorScheme="blueGray" onPress={createFilm}>
-                <Text>Add film</Text>
+            <Button borderColor={"black"} variant="outline" colorScheme="blueGray" onPress={createFilm}>
+              <Text>Add film</Text>
             </Button>
           </Modal.Footer>
         </Modal.Content>
       </Modal>
     </Center>
-    );
+  );
 };

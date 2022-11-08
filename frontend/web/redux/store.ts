@@ -1,6 +1,5 @@
-import {applyMiddleware} from "redux";
-import { legacy_createStore as createStore} from 'redux'
-
+import { applyMiddleware } from "redux";
+import { legacy_createStore as createStore } from 'redux'
 import thunk from "redux-thunk";
 
 export interface Store {
@@ -19,7 +18,7 @@ function storeReducer(state: Store = {
     genre: "",
     year: "0",
     sorting: "1",
-}, action: any) {
+}, action: any ) {
     switch (action.type) {
         case "SET_TITLE":
             return {
