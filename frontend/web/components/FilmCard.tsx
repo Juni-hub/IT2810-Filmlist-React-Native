@@ -1,6 +1,7 @@
-import React from "react";
+import { Box, Button, CheckIcon, Divider, HStack, Heading, Input, Pressable, Row, Select, Spinner, Text, VStack } from 'native-base';
+
 import { CreateFilmCard } from "../utils/Interface";
-import { Box, Button, CheckIcon, Divider, HStack, Heading, Input, Row, Select, Spinner, Text, VStack, Pressable } from 'native-base';
+import React from "react";
 
 export const FilmCard: React.FC<CreateFilmCard> = ({
     film,
@@ -11,10 +12,10 @@ export const FilmCard: React.FC<CreateFilmCard> = ({
             <Pressable onPress={() => handleClick(film)}>
                 <VStack divider={<Divider />} width="100%">
                     <Box padding={3} px="4" pt="4">
-                        <Text>{film.title}</Text>
+                        <Text data-testid={"title"}>{film.title}</Text>
                     </Box>
                     <Box px="4" padding={6}>
-                        <Text>Year Released: {film.year? film.year: "No year is registered"}</Text>
+                        <Text data-testid={"year"}>Year Released: {film.year? film.year: "No year is registered"}</Text>
                     </Box>
                 </VStack>
             </Pressable>
