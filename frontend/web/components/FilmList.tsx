@@ -123,7 +123,7 @@ export default function FilmList() {
         {!loading && !error && 
             <Box justifyContent="center" margin={4}>    
                 <Box  justifyContent="center">
-                    <Heading margin={4} marginTop={50}>Filmdatabase</Heading>
+                    <Heading data-testid = "header" margin={4} marginTop={50}>Filmdatabase</Heading>
                     <Box margin={1}>
                         <Input 
                             value={searchTitle}
@@ -170,12 +170,11 @@ export default function FilmList() {
                     <Flex direction='row'>
                         <Box margin={1}>
                             <Button  
-                                data-testid="test-element"
                                 onPress={() => {
                                     setFilterYear(true);
                                 }}
                             >
-                                <Text>Filter on year</Text>
+                                <Text data-testid={"test-element"}>Filter on year</Text>
                             </Button>
                         </Box>
                         <YearPicker
