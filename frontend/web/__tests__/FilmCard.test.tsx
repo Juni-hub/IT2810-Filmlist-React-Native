@@ -17,7 +17,9 @@ const inset = {
     frame: { x: 0, y: 0, width: 0, height: 0 },
     insets: { top: 0, left: 0, right: 0, bottom: 0 },
   };
-
+/** 
+* Test for loading card and that it shows correct information
+*/
 it("shows information about film" , async () => {
     render(
     <NativeBaseProvider initialWindowMetrics={inset}>
@@ -30,6 +32,9 @@ it("shows information about film" , async () => {
   expect(await screen.getByTestId("year")).toHaveTextContent("Year Released: 1900");
 });
 
+/** 
+* Test for that it opens a filmitem when clicked on
+*/
 it("runs handleClick function when clicked on" , async () => {
   const card = render(
   <NativeBaseProvider initialWindowMetrics={inset}>
@@ -43,7 +48,7 @@ it("runs handleClick function when clicked on" , async () => {
 });
 
 /** 
-* Snapshot test for loading page
+* Snapshot test for loading card
 */
 describe("Jest Snapshot testing suite",  () => {
     it("Matches DOM Snapshot",   () => {
