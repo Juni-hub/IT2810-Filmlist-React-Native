@@ -1,7 +1,7 @@
 # Prosjekt 4
 
 ## Beskrivelse av applikasjonen
-Applikasjonen henter data fra en database og viser et utvalg filmer utgitt fra 1900 til i dag. Hver film vises på appen som et kort og er beskrevet med tittel og utgivelsesår. Hver film kan trykkes på for å vise mer informasjon om rollebesetning og sjanger. Det er mulig å finne en ønsket film ved å filtrere på en enkelt eller en kombinasjon av tittel, sjanger og utgivelsesår. Videre er det mulig å sortere dataene i stigende eller synkende rekkefølge etter utgivelsesår. Det er også mulig for brukeren å legge til sine egne filmer i databasen.
+Applikasjonen henter data fra en database og viser et utvalg filmer utgitt fra 1900 til i dag. Hver film vises på appen som et kort og er beskrevet med tittel og utgivelsesår. Hver film kan trykkes på for å vise mer informasjon om rollebesetning og sjanger. Det er mulig å finne en ønsket film ved å filtrere på en enkel eller en kombinasjon av filterene tittel, sjanger og utgivelsesår. Videre er det mulig å sortere dataene i stigende eller synkende rekkefølge etter utgivelsesår. Det er også mulig for brukeren å legge til sine egne filmer i databasen ved å trykke på "Add New Film" knappen.
 
 ### Krav til innhold og utførelse i applikasjonen
 - Applikasjonen tillater å søke etter en film basert på tittel.
@@ -26,7 +26,7 @@ $ cd frontend/web
 $ npm install
 $ npx expo start
 ```
-Etter å ha kjørt kommandoene vil React Native-applikasjonen kjøre og det vil dukke opp en QR-kode i terminalen. Man kan åpne applikasjonen på mobil ved å scanne QR-koden (man må ha lastet ned Expo Go-appen). Det er mulig å samhandle direkte med serveren på http://localhost:4000/graphql.
+Etter å ha startet React Native applikasjonen vil det komme en QR kode i terminalen. Denne kan skannes i Expo Go appen (Android) eller via kamera appen (IOS). Det er også mulig å samhandle direkte med serveren på http://localhost:4000/graphql.
 
 ## Backend
 ### Backend fil struktur
@@ -53,20 +53,19 @@ For å kommunisere med databasen brukes biblioteket [mongoose](https://mongoosej
 
 #### Express JS, GraphQL, Apollo Server
 
-Gruppen bruker en Express-integrasjon av Apollo Server som sin GraphQL-server. [GraphQL](https://graphql.org/) er et query språk som benyttes for å samhandle med databasen gjennom mongoose. Med GraphQL har serveren kun et endepunkt og man kommuniserer med serveren ved å definere hva man ønsker å få i respons i querien. Vi valgte Apollo Server fordi den er enkel å sette opp og det finnes mye dokumentasjon på nettet. Man får også en nettside når serveren kjører der man kan teste ut ulike queries, noe som gjør debugging lettere. 
+Gruppen bruker en Express-integrasjon av Apollo Server som sin GraphQL-server. [GraphQL](https://graphql.org/) er et query språk som benyttes for å samhandle med databasen gjennom mongoose. Med GraphQL har serveren kun et endepunkt og man kommuniserer med serveren ved å definere hva man ønsker å få i respons i querien. Vi valgte Apollo Server fordi den er enkel å sette opp og det finnes mye dokumentasjon på nettet. Man får også en nettside ([GraphQL Server](http://localhost:4000/graphql)) når serveren kjører hvor man kan teste ut ulike queries, noe som gjør debugging lettere. 
 
 Filen TypeDefs definerer de nødvendige typene, spørringene og mutasjonene som er nødvendige i GraphQL schemaet. Her definerer gruppen en type kalt Post, som definerer felter som skal være i hvert filmobjekt. Videre definerer vi en type kalt Query for å definere en funksjon for å hente ut ønsket data, samt en type kalt Mutation for å definere en funksjon for å lage ett nytt objekt.
 
 Selve funksjonene for å hente eller endre dataen i databasen er skrevet i filen resolvers. Her er det laget en Query kalt getFilteredPosts, som brukes til å hente ut filtrert/ufiltreret data fra databasen. Denne funksjonen returnerer data avhengig av hvilke filter som tilføres. Det er mulig å filtrere på tittel, sjanger, rollebesetning og år, eventuelt en blanding av alle nevnte filter. Det er også mulig å sortere dataen basert på stigende eller synkende utgivelsesår.
 
-Videre har gruppen skrevet en Mutation kalt createPost som legger til nye filobjekter i databasen. Filmobjektet må ha en tittel, men det er valgfritt om det har et årstall, rollebesetning eller sjanger.
+Videre har gruppen skrevet en Mutation kalt createPost som legger til nye filobjekter i databasen. Filmobjektet må ha en tittel, men det er valgfritt om det har et årstall, rollebesetning eller sjanger. Hvert objekt får tildelt en ID når det opprettes.
 
 ## Frontend
-Fra prosjekt 3 til prosjekt 4 har vi byttet React-klienten med React Native-klient. Vi har tatt utgangspunkt i komponentene og layouten fra prosjekt 3, men gjort endringer slik at applikasjonen kan kjøres på en mobil enhet. Vi valgte å bytte design-bibliotekene Ant Design og Bootstrap til Native-Base ettersom Native-Base er en av de mest populære design-bibliotekene for React Native-applikasjoner. Resterende biblioteker som ble brukt i prosjekt 3, herunder redux for Local State Management, cypress for ende-til-ende testing og jest for enhetstesting, er støttet i React Native og derfor fremdeles brukt.
+Fra prosjekt 3 til prosjekt 4 har vi byttet ut React-klienten med en React Native-klient. Dette er gjort for å lage en mobil versjon av applikasjonen. Gruppen har tatt utgangspunkt i komponentene og layouten fra prosjekt 3, men gjort visse endringer i designet for å støtte det nye formatet. Videre valgte gruppen å bytte ut design-bibliotekene Ant Design og Bootstrap til fordel for NativeBase. Dette er fordi NativeBase er et populært design-bibliotek for React Native applikasjoner. Resterende biblioteker som ble brukt i prosjekt 3, herunder redux for Local State Management og jest for enhetstesting, er støttet i React Native og derfor fremdeles brukt.
 
 ### Frontend fil struktur
 ```
-cypress
 components
 │   AddFilm.tsx
 │   FilmItem.tsx
@@ -94,20 +93,17 @@ App.tsx
 ### Beskrivelse av bruk av teknologier
 #### React m/ Typescript
 
-Applikasjonen bruker React Native for å lage UI komponentene som brukeren ser på nettsiden. React Native er implementert med Typescript, som er et programmeringsspråk basert på JavaScript ved at det er lagt til statiske type definisjoner.
+Applikasjonen bruker React Native for å lage UI komponentene som brukeren ser på applikasjonen. React Native er implementert med Typescript, som er et programmeringsspråk basert på JavaScript ved at det er lagt til statiske type definisjoner.
 
 #### Apollo Client
 
-Apollo Client brukes i React applikasjonen for å koble til GraphQL APIet. I komponenten Films kjører vi spørringer og mutasjoner med Apollo Client for å hente og endre data fra serveren. Vi valgte Apollo Client fordi den er designet for React og er anbefalt å bruke sammen med Apollo Server.
+Apollo Client brukes i React applikasjonen for å koble til GraphQL APIet. I komponenten FilmList kjører vi spørringer og mutasjoner med Apollo Client for å hente og endre data fra serveren. Vi valgte Apollo Client fordi den er designet for React og er anbefalt å bruke sammen med Apollo Server.
 
 #### Redux
 Redux er et Javascript-bibliotek brukt for Local State Management i applikasjonen. Redux er brukt til å lagre filtrene brukeren har lagt inn.
 
 #### Design komponenter (Native-Base)
-I prosjekt 3 brukte gruppen React UI bibliotekene Ant Design og Bootstrap for å designe nettsiden. I prosjekt 4 skulle vi forandre applikasjonen til en mobil versjon og byttet derfor til React Native. På grunn av dette valgte gruppen å bruke et annet UI bibliotek da Ant Design er utviklet for webapplikasjoner. Gruppen byttet til et UI bibliotek kalt Native-Base som gir støtte for ulike komponenter for React Native. Grunnen til at vi valgte Native-Base var fordi flere av komponetene vi brukte i Ant Design er støttet i Native-Base. Dermed kunne mye av koden fra prosjekt 3 gjenbrukes i de nye komponentene. Fra Native-Base har vi hovedsaklig brukt komponentene Card, Modal og Button. 
-
-## Responsiv layout
-Layouten er designet slik at den skal passe til forskjellige skjermstørrelser. Dette er gjort ved å bruke design tokens og breakpoints, som hjelper til å holde designet konsistent og responsivt på alle plattformer.
+I prosjekt 3 brukte gruppen React UI bibliotekene Ant Design og Bootstrap for å designe applikasjonen. I prosjekt 4 skulle vi forandre applikasjonen til en mobil versjon og byttet derfor til React Native. På grunn av dette valgte gruppen å bruke et annet UI bibliotek da Ant Design er utviklet for webapplikasjoner. Gruppen byttet til et UI bibliotek kalt Native-Base som gir støtte for ulike komponenter for React Native. Grunnen til at vi valgte Native-Base var fordi flere av komponetene vi brukte i Ant Design er støttet i Native-Base. Dermed kunne mye av koden fra prosjekt 3 gjenbrukes i de nye komponentene. Fra Native-Base har vi hovedsaklig brukt komponentene Card, Modal og Button. 
 
 ### Testing
 Prosjektet er testet ved bruk av Cypress for ende-til-endetesting og Jest for komponenttesting. I tillegg har vi bruke CI pipeline i GitLab for å passe på at koden i main fungerer gjennom utviklingsprosessen.
@@ -119,7 +115,7 @@ $ cd frontend/web
 $ npx cypress run
 ```
 #### Jest
-Jest er et test rammeverk for Javascript og Typescript og kan lett integreres med React Native.  Vi bruker Jest med Babel, og siden vi skriver i Typescript sørget vi for at Babel ble konfigurert til å funke med Typescript. I prosjektet vårt har vi skrevet tester for å sjekke at nettsiden oppfører seg som den skal. I tillegg til dette er det laget en snapshottest. Snapshottest sikrer at brukergrensesnittet ikke endrer seg uventet. Når denne testen kjøres, blir det laget en snapshot fil. Hvis det allerede eksisterer en snapshot fil tilhørende en test, vil denne overskrives. Man kan finne alle snapshot filene i mappen `__snapshots__`. For å teste med Jest må man skrive følgende kommandoer:
+Jest er et test rammeverk for Javascript og Typescript og kan lett integreres med React Native.  Vi bruker Jest med Babel, og ettersom vi skriver i Typescript sørget vi for at Babel ble konfigurert til å funke med Typescript. I prosjektet vårt har vi skrevet tester for å sjekke at applikasjonen oppfører seg som den skal. I tillegg til dette er det laget en snapshottest. Snapshottest sikrer at brukergrensesnittet ikke endrer seg uventet. Når denne testen kjøres, blir det laget en snapshot fil. Hvis det allerede eksisterer en snapshot fil tilhørende en test, vil denne overskrives. Man kan finne alle snapshot filene i mappen `__snapshots__`. For å teste med Jest må man skrive følgende kommandoer:
 ```
 $ cd frontend/web
 $ npm test
@@ -128,11 +124,11 @@ $ npm test
 ## Diskusjon
 ### Universell utforming
 
-Universell utforming handler om at applikasjoner skal lages på en måte som gjør de tilgjengelige for alle, uavhengig av faktorer som alder, funksjonsevne eller utdanningsnivå. Web Content Accessibility Guidelines (WCAG) er en standard for å sikre universell utforming på nettsider. Retningslinjene er bygget opp av fire prinsipper. Under listes prinsippene og tiltakene gruppen har gjort for å sikre at de følges.  
+Universell utforming handler om at applikasjoner skal lages på en måte som gjør de tilgjengelige for alle, uavhengig av faktorer som alder, funksjonsevne eller utdanningsnivå. Web Content Accessibility Guidelines (WCAG) er en standard for å sikre universell utforming på nettsider og applikasjoner. Retningslinjene er bygget opp av fire prinsipper. Under listes prinsippene og tiltakene gruppen har gjort for å sikre at de følges.  
 
 1. Mulig å oppfatte: Innhold presenteres for brukerene på måter de kan oppfatte.
 - Alt innhold og deres funksjonalitet er beskrevet og presentert for brukeren
-- Layouten til nettsiden er tilpasset alle skjermer uten at informasjon eller struktur går tapt
+- Layouten til nettsiden/applikasjonen er tilpasset alle skjermer uten at informasjon eller struktur går tapt
 - Farge og fargekontraster er brukt på en måte som gjør innholdet synlig og tilgjengelig for alle brukere.
 
 2. Mulig å betjene: Innholdet skal være mulig å betjene uavhengig av hvordan brukeren navigerer.
@@ -148,6 +144,6 @@ Universell utforming handler om at applikasjoner skal lages på en måte som gj�
 
 ### Bærekraftig utvikling
 
-Nettsiden benytter pagination og laster kun inn deler av innholdet (15 elementer) til en hver tid. Brukeren kan selv velge om de ønsker å laste inn mer innhold når de har sett alle elementene. Dette gir generelt sett lavere datatrafikk ettersom brukeren mest sannsylig ikke trenger gå igjennom alle objektene.
+Applikasjonen benytter pagination og laster kun inn deler av innholdet (15 elementer) til en hver tid. Brukeren kan selv velge om de ønsker å laste inn mer innhold når de har sett alle elementene. Dette gir generelt sett lavere datatrafikk ettersom brukeren mest sannsylig ikke trenger gå igjennom alle objektene.
 
-Komponentene på nettsiden er minimale, men hensiktsmessige for å formidle innholdet til brukeren. Gruppen bruker verken bilder, videoer eller GIFs da disse krever mye datatrafikk og energibruk på klient. Videre er nettsiden laget med dark mode. Dette er på grunn av at mørkere farger krever mindre energi og er av resultat mer miljøvennlig enn bruken av lysere farger.
+Komponentene på applikasjonen er minimale, men hensiktsmessige for å formidle innholdet til brukeren. Gruppen bruker verken bilder, videoer eller GIFs da disse krever mye datatrafikk og energibruk på klient. Videre er applikasjonen laget med dark mode. Dette er på grunn av at mørkere farger krever mindre energi og er av resultat mer miljøvennlig enn bruken av lysere farger.
