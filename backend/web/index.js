@@ -5,6 +5,10 @@ const resolvers = require("./resolvers");
 const mongoose = require("mongoose");
 const cors = require('cors');
 
+/** 
+* Function that starts the server
+*/
+
 async function startServer() {
   const app = express()
   const apolloServer = new ApolloServer({ 

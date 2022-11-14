@@ -21,8 +21,7 @@ export const FilmCard: React.FC<CreateFilmCard> = ({
                     </Box>
                     <Box px="4" padding={6}>
                         <Text fontSize={15} data-testid={"year"}>Year Released: {film.year? film.year: "No year is registered"}</Text>
-                    </Box>
-                    
+                    </Box>     
                 </VStack>
             </Pressable>
         </Box>

@@ -93,7 +93,7 @@ App.tsx
 - `queries` inneholder funksjoner for graphql queries og mutations.
 - `redux` inneholder funktionalitet for å lagre og håndere data fra en Redux Store.
 - `utils` inneholder interfaces brukt i applikasjonen.
-- `App.stx` er root komponenten til applikasjonen.
+- `App.tsx` er root komponenten til applikasjonen.
 
 ### Beskrivelse av bruk av teknologier
 #### React m/ Typescript
@@ -127,7 +127,7 @@ Universell utforming handler om at applikasjoner skal lages på en måte som gj�
 
 1. Mulig å oppfatte: Innhold presenteres for brukerene på måter de kan oppfatte.
 - Alt innhold og deres funksjonalitet er beskrevet og presentert for brukeren
-- Layouten til nettsiden/applikasjonen er tilpasset alle skjermer uten at informasjon eller struktur går tapt
+- Layouten til applikasjonen er tilpasset alle skjermer uten at informasjon eller struktur går tapt
 - Farge og fargekontraster er brukt på en måte som gjør innholdet synlig og tilgjengelig for alle brukere.
 
 2. Mulig å betjene: Innholdet skal være mulig å betjene uavhengig av hvordan brukeren navigerer.
@@ -139,7 +139,7 @@ Universell utforming handler om at applikasjoner skal lages på en måte som gj�
 - Forklarende titler til innhold
 
 4. Robust: Innhold fungerer uavhengig av hjelpemidler du bruker 
-- Innholdet er kompatibel med og testet på ulike mobiler (iPhone 12 Mini, Android, iPhone 11, iPhone 13)
+- Innholdet er kompatibel med og testet på ulike mobiler kjørende på både IOS og Android
 
 ### Bærekraftig utvikling
 

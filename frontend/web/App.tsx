@@ -9,7 +9,6 @@ import { relayStylePagination } from "@apollo/client/utilities";
 import store from "./redux/store";
 import React from 'react';
 
-
 const client = new ApolloClient({
   link: new HttpLink({ uri: 'http://it2810-34.idi.ntnu.no:8080/graphql', fetch }),
   cache: new InMemoryCache({
@@ -40,4 +39,3 @@ export default function App() {
     </NativeBaseProvider>
   );
 }
-

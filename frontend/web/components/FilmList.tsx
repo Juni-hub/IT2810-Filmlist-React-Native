@@ -31,10 +31,6 @@ export default function FilmList() {
     const [filterYear, setFilterYear] = useState(false);
     const [searchTitle, setSearchTitle] = useState ("");
 
-    const hideFilm = () => {
-      setShowFilm(false);
-    };
-
     const dispatch = useDispatch();
     const [createPost] = useMutation(ADD_FILM);
 
@@ -42,6 +38,13 @@ export default function FilmList() {
     let genre = useSelector ((state: Store) => state.genre); //fetching genre filter from redux store
     let year = useSelector ((state: Store) => state.year); //fetching year filter from redux store
     let sorting = useSelector ((state: Store) => state.sorting); //fetching sorting filter from redux store
+
+    /** 
+    * Const that hides a film item
+    */
+    const hideFilm = () => {
+        setShowFilm(false);
+    };
     
     /** 
     * Retrieves data, loading and error from graphql server
@@ -63,9 +66,9 @@ export default function FilmList() {
         return (
             <HStack space={2} justifyContent="center">
                 <Spinner accessibilityLabel="Loading posts" />
-                    <Heading color="primary.500" fontSize="md">
-                        <Text>Loading...</Text>
-                    </Heading>
+                <Heading color="primary.500" fontSize="md">
+                    <Text>Loading...</Text>
+                </Heading>
             </HStack>
         )
     }
@@ -96,8 +99,11 @@ export default function FilmList() {
         setOpenCreate(false);
     };
 
-    function handleClick(post: Film) {
-        setCurrentPost(post);
+    /** 
+    * Functions that handles clicking of a film
+    */
+    function handleClick(film: Film) {
+        setCurrentPost(film);
         setShowFilm(true);
     }
 
@@ -205,7 +211,8 @@ export default function FilmList() {
                                 }}}
                                 accessibilityLabel="Filter on year"
                             >   
-                            {year === "0" ? <Text color={"grey"}>Filter year  <ChevronDownIcon color={"grey"}  size={6} /></Text> : <Text color={"grey"}>{year}  <ChevronDownIcon color={"grey"} size={6} /></Text>}
+                                {year === "0" ? <Text color={"grey"}>Filter year  <ChevronDownIcon color={"grey"}  size={6} /></Text> 
+                                    : <Text color={"grey"}>{year}  <ChevronDownIcon color={"grey"} size={6} /></Text>}
                             </Button>
                         </Box>
                         <YearPicker
@@ -241,13 +248,13 @@ export default function FilmList() {
                 <ScrollView w="100%" h="sm">
                     {data.getFilteredPosts != 0?
                         data.getFilteredPosts?.map((post: Film) => (
-                        <FilmCard
-                            key={post._id}
-                            film={post}
-                            handleClick={() => handleClick(post)}
-                        /> 
-                    ))
-                    : <Text padding={3} color={"white"} fontSize={22}>No more films found</Text>}
+                            <FilmCard
+                                key={post._id}
+                                film={post}
+                                handleClick={() => handleClick(post)}
+                            />
+                        )) : <Text padding={3} color={"white"} fontSize={22}>No more films found</Text>
+                    }
                 </ScrollView>
                 <ShowFilmItem 
                     film={currentPost} 
@@ -256,24 +263,23 @@ export default function FilmList() {
                 />
                 <Box paddingTop={4}>
                     {page != 0? 
-                    <Button
-                        margin={1}
-                        disabled={loading}
-                        
-                        onPress={() => (setPage(prev => prev-1))}
-                    >
-                        <Text color={"white"}>Previous</Text>
-                    </Button>
-                    : null}
+                        <Button
+                            margin={1}
+                            disabled={loading}
+                            
+                            onPress={() => (setPage(prev => prev-1))}
+                        >
+                            <Text color={"white"}>Previous</Text>
+                        </Button> : null}
                     {data.getFilteredPosts != 0?
-                    <Button
-                        margin={1}
-                        disabled={loading}
-                        onPress={() => (setPage(prev => prev+1))}
-                    >
-                        <Text color={"white"}>Next</Text>
-                    </Button>
-                    : null}
+                        <Button
+                            margin={1}
+                            disabled={loading}
+                            onPress={() => (setPage(prev => prev+1))}
+                        >
+                            <Text color={"white"}>Next</Text>
+                        </Button> : null
+                    }
                 </Box>
             </Box>
         }
