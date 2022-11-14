@@ -1,6 +1,7 @@
-import React from "react";
+import { Box,  Divider,  Pressable, Text, VStack } from 'native-base';
 import { CreateFilmCard } from "../utils/Interface";
-import { Box, Text, VStack, Pressable, Divider } from 'native-base';
+import React from "react";
+
 
 /** 
 * Const for creating a filmcard 
@@ -17,11 +18,12 @@ export const FilmCard: React.FC<CreateFilmCard> = ({
             <Pressable onPress={() => handleClick(film)}>
                 <VStack divider={<Divider />} width="100%">
                     <Box padding={3} px="4" pt="4">
-                        <Text fontSize={20}>{film.title}</Text>
+                        <Text fontSize={20} data-testid={"title"}>{film.title}</Text>
                     </Box>
                     <Box px="4" padding={6}>
-                        <Text fontSize={15}>Year Released: {film.year? film.year: "No year is registered"}</Text>
+                        <Text fontSize={15} data-testid={"year"}>Year Released: {film.year? film.year: "No year is registered"}</Text>
                     </Box>
+                    
                 </VStack>
             </Pressable>
         </Box>

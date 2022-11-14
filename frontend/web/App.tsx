@@ -1,15 +1,17 @@
-import React from 'react';
-import { View } from 'react-native';
-import { ApolloClient, ApolloProvider, InMemoryCache } from '@apollo/client';
+import {StyleSheet, View} from 'react-native';
+import { ApolloClient, ApolloProvider, HttpLink, InMemoryCache } from '@apollo/client';
 import { NativeRouter, Route, Routes } from 'react-router-native';
 import FilmList from './components/FilmList';
+import { NativeBaseProvider } from 'native-base';
 import { Provider } from "react-redux";
+import fetch from 'cross-fetch';
 import { relayStylePagination } from "@apollo/client/utilities";
 import store from "./redux/store";
-import { NativeBaseProvider } from 'native-base';
+import React from 'react';
+
 
 const client = new ApolloClient({
-  uri: 'http://it2810-34.idi.ntnu.no:8080/graphql', 
+  link: new HttpLink({ uri: 'http://it2810-34.idi.ntnu.no:8080/graphql', fetch }),
   cache: new InMemoryCache({
     typePolicies: {
       Query: {
@@ -38,3 +40,4 @@ export default function App() {
     </NativeBaseProvider>
   );
 }
+
