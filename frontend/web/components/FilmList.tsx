@@ -263,6 +263,7 @@ export default function FilmList() {
                         <Text color={"white"}>Previous</Text>
                     </Button>
                     : null}
+                    {data != 0?
                     <Button
                         margin={1}
                         disabled={loading}
@@ -270,6 +271,7 @@ export default function FilmList() {
                     >
                         <Text color={"white"}>Next</Text>
                     </Button>
+                    : null}
                 </Box>
             </Box>
         }
