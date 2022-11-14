@@ -1,6 +1,8 @@
 # Prosjekt 4
 
 ## Beskrivelse av applikasjonen
+Applikasjonen er en React Native-applikasjon for Android og iOS. Vi har lagt inn en wheel-picker for å filtrere på år som kun fungerer for mobil og en web-visning av applikasjonen fungerer ikke. Man må også være på NTNU VPN for at applikasjonen skal fungere.
+
 Applikasjonen henter data fra en database og viser et utvalg filmer utgitt fra 1900 til i dag. Hver film vises på appen som et kort og er beskrevet med tittel og utgivelsesår. Hver film kan trykkes på for å vise mer informasjon om rollebesetning og sjanger. Det er mulig å finne en ønsket film ved å filtrere på en enkel eller en kombinasjon av filterene tittel, sjanger og utgivelsesår. Videre er det mulig å sortere dataene i stigende eller synkende rekkefølge etter utgivelsesår. Det er også mulig for brukeren å legge til sine egne filmer i databasen ved å trykke på "Add New Film" knappen.
 
 ### Krav til innhold og utførelse i applikasjonen
@@ -126,18 +128,18 @@ Universell utforming handler om at applikasjoner skal lages på en måte som gj�
 - Farge og fargekontraster er brukt på en måte som gjør innholdet synlig og tilgjengelig for alle brukere.
 
 2. Mulig å betjene: Innholdet skal være mulig å betjene uavhengig av hvordan brukeren navigerer.
-- Alt innhold er tilgjengelig uavhengig av utstyr som brukeren har (tastatur, mus, etc.)
+- Alt innhold er tilgjengelig uavhengig av hvilken telefon brukeren har
 
 3. Forståelig: Innholdet på er forståelig
 - Gjennomtenkt bruk av font, tekststørrelse og farger
 - Lettlest og forståelig språkbruk
-- Forklarende tekster til innhold
+- Forklarende titler til innhold
 
 4. Robust: Innhold fungerer uavhengig av hjelpemidler du bruker 
-- Innholdet er kompatibel med og testet på ulike nettlesere (Safari, Chroome, Firefox). Det brukes ikke komponenter som ikke støttes av alle nettlesere.
+- Innholdet er kompatibel med og testet på ulike mobiler (iPhone 12 Mini, Android, iPhone 11, iPhone 13)
 
 ### Bærekraftig utvikling
 
-Applikasjonen benytter pagination og laster kun inn deler av innholdet (15 elementer) til en hver tid. Brukeren kan selv velge om de ønsker å laste inn mer innhold når de har sett alle elementene. Dette gir generelt sett lavere datatrafikk ettersom brukeren mest sannsylig ikke trenger gå igjennom alle objektene.
+Applikasjonen benytter pagination og laster kun inn deler av innholdet (8 elementer) til en hver tid. Brukeren kan selv velge om de ønsker å laste inn mer innhold når de har sett alle elementene. Dette gir generelt sett lavere datatrafikk ettersom brukeren mest sannsylig ikke trenger gå igjennom alle objektene.
 
 Komponentene på applikasjonen er minimale, men hensiktsmessige for å formidle innholdet til brukeren. Gruppen bruker verken bilder, videoer eller GIFs da disse krever mye datatrafikk og energibruk på klient. Videre er applikasjonen laget med dark mode. Dette er på grunn av at mørkere farger krever mindre energi og er av resultat mer miljøvennlig enn bruken av lysere farger.
