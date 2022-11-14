@@ -8,13 +8,15 @@ import renderer from "react-test-renderer";
 import store from '../redux/store';
 
 const film = {"_id":"63453c374d8655244d2aa472","title":"After Dark in Central Park",
-"year":"1900","cast":[],"genres":[]}
+"year":"1900","cast":[],"genres":[]};
+
 const handleClick = jest.fn();
 
 const inset = {
     frame: { x: 0, y: 0, width: 0, height: 0 },
     insets: { top: 0, left: 0, right: 0, bottom: 0 },
   };
+
 /** 
 * Test for loading card and that it shows correct information
 */
@@ -54,8 +56,6 @@ describe("Jest Snapshot testing suite",  () => {
       <NativeBaseProvider initialWindowMetrics={inset}><Provider store={store}>
       <FilmCard film={film} handleClick={handleClick}/></Provider></NativeBaseProvider>).toJSON();
       expect(domTree).toMatchSnapshot();
-  
-      
     });
   });
 
