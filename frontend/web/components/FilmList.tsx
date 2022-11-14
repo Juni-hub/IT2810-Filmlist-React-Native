@@ -1,5 +1,5 @@
 import { ADD_FILM, SEARCH_FILMS } from '../queries/filmQueries';
-import { Box, Button, CheckIcon, ChevronDownIcon, Flex, HStack, Heading, Input, ScrollView, Select, Spinner, Text } from 'native-base';
+import { Box, Button, Flex, HStack, Heading, Input, ScrollView, Select, Spinner, Text } from 'native-base';
 import { CreateFilm, Film } from '../utils/Interface';
 import { setGenre, setSorting, setTitle, setYear } from '../redux/actions';
 import { useDispatch, useSelector } from "react-redux";
@@ -153,7 +153,7 @@ export default function FilmList() {
                                 _selectedItem={{
                                     bg: "cyan.600",
                                     rounded: "10",
-                                    endIcon: <CheckIcon color={"black"} size={6} />
+                                    /*endIcon: <CheckIcon color={"black"} size={6} />*/
                                 }} 
                                 accessibilityLabel="Select genre"
                             >
@@ -183,7 +183,7 @@ export default function FilmList() {
                                 _selectedItem={{
                                     bg: "cyan.600",
                                     rounded: "10",
-                                    endIcon: <CheckIcon color={"black"} size={6} />
+                                    /*endIcon: <CheckIcon color={"black"} size={6} />*/
                                 }} 
                                 accessibilityLabel="Sort on year"
                             >
@@ -205,7 +205,7 @@ export default function FilmList() {
                                 }}
                                 accessibilityLabel="Filter on year"
                             >
-                                <Text color={"grey"}>Filter year <ChevronDownIcon paddingLeft={1} color={"grey"} size={6}/></Text>
+                                <Text color={"grey"}>Filter year </Text>
                             </Button>
                         </Box>
                         <YearPicker

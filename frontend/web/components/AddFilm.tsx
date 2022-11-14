@@ -1,6 +1,5 @@
 import { CreateFormProps } from '../utils/Interface';
-import { Center, Button, Modal, Select, CheckIcon } from "native-base";
-import { Input, Text } from 'native-base';
+import { Center, Button, Modal, Select, Input, Text, FormControl } from "native-base";
 import React from 'react';
 
 /** 
@@ -20,67 +19,87 @@ export const CreateForm: React.FC<CreateFormProps> = ({
     const [cast, setCast] = React.useState("");
     const [genres, setGenres] = React.useState("");
 
+    const [errors, setErrors] = React.useState({});
+
     const handleTitle = (value: string) => setTitle(value);
     const handleYear = (value: string) => setYear(value);
     const handleCast = (value: string) => setCast(value);
     const handleGenres = (value: string) => setGenres(value);
 
     function createFilm() {
+      validate()?
       onCreate({
-          title: title, 
-          year: year, 
-          cast: cast,
-          genres: genres,
-        }
-      )
+        title: title, 
+        year: year, 
+        cast: cast,
+        genres: genres,
+      }) : console.log('Validation Failed');
+    }
+
+    const validate = () => {
+      if (title.trim() === "") {
+        setErrors({ ...errors,
+          title: 'Name is required'
+        });
+        return false;
+      } else if (parseInt(year) < 1900 || parseInt(year) > new Date().getFullYear()) {
+        setErrors({ ...errors,
+          year: 'Year must be between 1900 and ' + new Date().getFullYear()
+        });
+        return false;
+      }
+      return true;
+    };
+
+    function resetValues() {
+      setErrors({});
     }
 
     return(
       <Center>
-        <Modal isOpen={open} onClose={onCancel}>
+        <Modal isOpen={open} onClose={() => { resetValues(); onCancel();}}>
           <Modal.Content maxWidth="400px">
             <Modal.CloseButton />
             <Modal.Header>
               <Text>Chosen film</Text>
             </Modal.Header>
             <Modal.Body>
+              <FormControl isRequired isInvalid={'title' in errors}>
+                <Input
+                  fontSize={15}
+                  variant="outline"
+                  onChangeText={handleTitle}
+                  placeholder="Title"
+                />
+                {'title' in errors ? <FormControl.ErrorMessage>Title is required!</FormControl.ErrorMessage> : ""}
+              </FormControl>
+              
+              <FormControl isRequired isInvalid={'year' in errors}>
+                <Input
+                  fontSize={15}
+                  variant="outline"
+                  onChangeText={handleYear}
+                  placeholder="Year"
+                />
+                {'year' in errors ? <FormControl.ErrorMessage>{'Year must be between 1900 and ' + new Date().getFullYear()}</FormControl.ErrorMessage> : ""}
+              </FormControl>
+
               <Input
-                borderColor={"black"}
                 fontSize={15}
-                placeholderTextColor={"black"}
-                marginBottom={2}  
-                variant="outline"
-                onChangeText={handleTitle}
-                placeholder="Title"
-              />
-              <Input
-                borderColor={"black"}
-                fontSize={15}
-                placeholderTextColor={"black"}
-                marginBottom={2}
-                variant="outline"
-                onChangeText={handleYear}
-                placeholder="Year"
-              />
-              <Input
-                borderColor={"black"}
-                fontSize={15}
-                placeholderTextColor={"black"}
-                marginBottom={2}
+                marginBottom={3}
                 variant="outline"
                 onChangeText={handleCast}
                 placeholder="Cast"
               />
+
               <Select 
-                borderColor={"black"}
                 fontSize={15}
-                placeholderTextColor={"black"}
                 placeholder="Genres" 
                 mx={{base: 0, md: "Genre"}} 
                 onValueChange={handleGenres} 
                 _selectedItem={{
-                  bg: "cyan.600",
-                    endIcon: <CheckIcon size={4} />
+                  bg: "cyan.600"
+                    /*endIcon: <CheckIcon size={4} />*/
                 }} 
                 accessibilityLabel="Select genre"
               >
@@ -97,12 +116,12 @@ export const CreateForm: React.FC<CreateFormProps> = ({
                 <Select.Item label="Historical" value="Historical" />
                 <Select.Item label="Animated" value="Animated" />
               </Select>
-          </Modal.Body>
+            </Modal.Body>
           <Modal.Footer>
-            <Button borderColor={"black"} marginRight={2} variant="outline" colorScheme="blueGray" onPress={onCancel}>
+            <Button marginRight={2} variant="outline" colorScheme="blueGray" onPress={onCancel}>
               <Text>Close</Text>
             </Button>
-            <Button borderColor={"black"} variant="outline" colorScheme="blueGray" onPress={createFilm}>
+            <Button variant="outline" colorScheme="blueGray" onPress={createFilm}>
               <Text>Add film</Text>
             </Button>
           </Modal.Footer>

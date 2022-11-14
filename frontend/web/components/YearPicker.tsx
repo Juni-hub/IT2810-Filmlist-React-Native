@@ -19,7 +19,7 @@ export const YearPicker: React.FC<CreateShowYearProps> = ({
   const dispatch = useDispatch();
   const yearList : string[] = [];
 
-  for (let i = 1900; i < 2019; i++) {
+  for (let i = 1900; i < new Date().getFullYear()+1; i++) {
     yearList.push(i.toString());
   }
 
