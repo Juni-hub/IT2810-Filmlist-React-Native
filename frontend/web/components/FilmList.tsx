@@ -1,16 +1,17 @@
-import React from 'react';
 import { ADD_FILM, SEARCH_FILMS } from '../queries/filmQueries';
-import { Box, Button, HStack, Heading, Input, Select, Spinner, Text, ScrollView, Flex } from 'native-base';
+import { Box, Button, Flex, HStack, Heading, Input, ScrollView, Select, Spinner, Text } from 'native-base';
 import { CreateFilm, Film } from '../utils/Interface';
 import { setGenre, setSorting, setTitle, setYear } from '../redux/actions';
 import { useDispatch, useSelector } from "react-redux";
 import { useMutation, useQuery } from '@apollo/client'
+
 import { CreateForm } from './AddFilm';
+import { FilmCard } from './FilmCard';
+import React from 'react';
 import { ShowFilmItem } from './FilmItem';
 import { Store } from "../redux/store";
 import { YearPicker } from './YearPicker';
 import { useState } from 'react';
-import { FilmCard } from './FilmCard';
 
 const PAGE_SIZE = 8;
 
@@ -238,13 +239,15 @@ export default function FilmList() {
                     </Flex>
                 </Box>
                 <ScrollView w="100%" h="sm">
-                    {data.getFilteredPosts?.map((post: Film) => (
+                    {data.getFilteredPosts != 0?
+                        data.getFilteredPosts?.map((post: Film) => (
                         <FilmCard
                             key={post._id}
                             film={post}
                             handleClick={() => handleClick(post)}
                         /> 
-                    ))}
+                    ))
+                    : <Text color={"white"}>No more films found</Text>}
                 </ScrollView>
                 <ShowFilmItem 
                     film={currentPost} 
@@ -252,13 +255,16 @@ export default function FilmList() {
                     onCancel={hideFilm} 
                 />
                 <Box paddingTop={4}>
+                    {page != 0? 
                     <Button
                         margin={1}
                         disabled={loading}
+                        
                         onPress={() => (setPage(prev => prev-1))}
                     >
                         <Text color={"white"}>Previous</Text>
                     </Button>
+                    : null}
                     <Button
                         margin={1}
                         disabled={loading}
