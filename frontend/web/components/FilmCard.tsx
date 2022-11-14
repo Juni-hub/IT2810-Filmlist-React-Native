@@ -2,7 +2,6 @@ import { Box,  Divider,  Pressable, Text, VStack } from 'native-base';
 import { CreateFilmCard } from "../utils/Interface";
 import React from "react";
 
-
 /** 
 * Const for creating a filmcard 
 * @param film the film to be displayed on the card

@@ -1,16 +1,16 @@
-import React from 'react';
 import { ADD_FILM, SEARCH_FILMS } from '../queries/filmQueries';
-import { Box, Button, CheckIcon, HStack, Heading, Input, Select, Spinner, Text, ScrollView, Flex, ChevronDownIcon } from 'native-base';
+import { Box, Button, Flex, HStack, CheckIcon, ChevronDownIcon, Input, ScrollView, Select, Spinner, Text, Heading } from 'native-base';
 import { CreateFilm, Film } from '../utils/Interface';
 import { setGenre, setSorting, setTitle, setYear } from '../redux/actions';
 import { useDispatch, useSelector } from "react-redux";
 import { useMutation, useQuery } from '@apollo/client'
 import { CreateForm } from './AddFilm';
+import { FilmCard } from './FilmCard';
+import React from 'react';
 import { ShowFilmItem } from './FilmItem';
 import { Store } from "../redux/store";
 import { YearPicker } from './YearPicker';
 import { useState } from 'react';
-import { FilmCard } from './FilmCard';
 
 const PAGE_SIZE = 8;
 
@@ -105,6 +105,7 @@ export default function FilmList() {
     * Resets the filters in redux
     */
     function useReset() {
+        setPage(0);
         dispatch(setTitle(""))
         dispatch(setGenre(""))
         dispatch(setYear("0"))
@@ -122,7 +123,7 @@ export default function FilmList() {
         {!loading && !error && 
             <Box justifyContent="center" margin={4} >    
                 <Box paddingBottom={3}>
-                    <Heading margin={4} color={"white"} marginBottom={5} marginTop={55}>Filmdatabase</Heading>
+                    <Heading margin={4} color={"white"} marginBottom={5} marginTop={55}>FilmBase: Find a film!</Heading>
                     <Box margin={1}>
                         <Input
                             backgroundColor="white"  
@@ -133,7 +134,7 @@ export default function FilmList() {
                             fontSize={15}
                             onChangeText={(e: string) => setSearchTitle(e)}
                             InputRightElement={
-                                <Button size="xs" rounded="none" w="1/4" h="full" onPress={() => dispatch(setTitle(searchTitle))}>
+                                <Button size="xs" rounded="none" w="1/4" h="full" onPress={() => {setPage(0); dispatch(setTitle(searchTitle));}}>
                                     { <Text color={"white"}>Search</Text> }
                                 </Button>
                             }
@@ -148,7 +149,7 @@ export default function FilmList() {
                                 borderColor={"600"}
                                 placeholder="Filter genre" 
                                 fontSize={15} 
-                                onValueChange={e => dispatch(setGenre(e))} 
+                                onValueChange={e => {setPage(0);dispatch(setGenre(e));}} 
                                 _selectedItem={{
                                     bg: "cyan.600",
                                     rounded: "10",
@@ -178,7 +179,7 @@ export default function FilmList() {
                                 }} 
                                 borderColor={"600"} 
                                 fontSize={15} 
-                                onValueChange={e => dispatch(setSorting(e))} 
+                                onValueChange={e => {setPage(0); dispatch(setSorting(e));}} 
                                 _selectedItem={{
                                     bg: "cyan.600",
                                     rounded: "10",
@@ -200,11 +201,11 @@ export default function FilmList() {
                                 borderWidth="1"
                                 fontSize={15}
                                 onPress={() => {
-                                    setFilterYear(true);
-                                }}
+                                   {setPage(0); setFilterYear(true);
+                                }}}
                                 accessibilityLabel="Filter on year"
-                            >
-                                <Text color={"grey"}>Filter year <ChevronDownIcon paddingLeft={1} color={"grey"} size={6}/></Text>
+                            >   
+                            {year === "0" ? <Text color={"grey"}>Filter year  <ChevronDownIcon color={"grey"}  size={6} /></Text> : <Text color={"grey"}>{year}  <ChevronDownIcon color={"grey"} size={6} /></Text>}
                             </Button>
                         </Box>
                         <YearPicker
@@ -222,7 +223,7 @@ export default function FilmList() {
                         </Box>
                         <Box marginTop={2} margin={1}>
                             <Button
-                                onPress={() => { setOpenCreate(true); }}
+                                onPress={() => { setPage(0); setOpenCreate(true); }}
                                 accessibilityLabel="Create new film"
                             >
                                 <Text color={"white"}>Add New Film</Text>
@@ -238,13 +239,15 @@ export default function FilmList() {
                     </Flex>
                 </Box>
                 <ScrollView w="100%" h="sm">
-                    {data.getFilteredPosts?.map((post: Film) => (
+                    {data.getFilteredPosts != 0?
+                        data.getFilteredPosts?.map((post: Film) => (
                         <FilmCard
                             key={post._id}
                             film={post}
                             handleClick={() => handleClick(post)}
                         /> 
-                    ))}
+                    ))
+                    : <Text padding={3}  color={"white"} fontSize={22}>No more films found</Text>}
                 </ScrollView>
                 <ShowFilmItem 
                     film={currentPost} 
@@ -252,13 +255,17 @@ export default function FilmList() {
                     onCancel={hideFilm} 
                 />
                 <Box paddingTop={4}>
+                    {page != 0? 
                     <Button
                         margin={1}
                         disabled={loading}
+                        
                         onPress={() => (setPage(prev => prev-1))}
                     >
                         <Text color={"white"}>Previous</Text>
                     </Button>
+                    : null}
+                    {data.getFilteredPosts != 0?
                     <Button
                         margin={1}
                         disabled={loading}
@@ -266,6 +273,7 @@ export default function FilmList() {
                     >
                         <Text color={"white"}>Next</Text>
                     </Button>
+                    : null}
                 </Box>
             </Box>
         }
