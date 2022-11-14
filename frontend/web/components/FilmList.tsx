@@ -239,13 +239,15 @@ export default function FilmList() {
                     </Flex>
                 </Box>
                 <ScrollView w="100%" h="sm">
-                    {data.getFilteredPosts?.map((post: Film) => (
+                    {data.getFilteredPosts != 0?
+                        data.getFilteredPosts?.map((post: Film) => (
                         <FilmCard
                             key={post._id}
                             film={post}
                             handleClick={() => handleClick(post)}
                         /> 
-                    ))}
+                    ))
+                    : <Text color={"white"}>No more films found</Text>}
                 </ScrollView>
                 <ShowFilmItem 
                     film={currentPost} 
