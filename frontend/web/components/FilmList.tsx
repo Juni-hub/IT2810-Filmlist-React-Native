@@ -1,19 +1,18 @@
 import { ADD_FILM, SEARCH_FILMS } from '../queries/filmQueries';
-import { Box, Button, CheckIcon, Divider, HStack, Heading, Input, Row, Select, Spinner, Text, VStack, Column, ScrollView, Flex, Center, } from 'native-base';
+import { Box, Button, CheckIcon, HStack, Heading, Input, Select, Spinner, Text, ScrollView, Flex, } from 'native-base';
 import { Film, Values } from '../utils/Interface';
 import { setGenre, setSorting, setTitle, setYear } from '../redux/actions';
 import { useDispatch, useSelector } from "react-redux";
 import { useMutation, useQuery } from '@apollo/client'
 
 import { CreateForm } from './AddFilm';
-import { Pressable } from "react-native";
 import React from 'react';
 import { ShowFilmItem } from './FilmItem';
 import {Store} from "../redux/store";
 import {YearPicker} from './YearPicker';
 import { useState } from 'react';
 import { FilmCard } from './FilmCard';
-import { flexbox } from 'native-base/lib/typescript/theme/styled-system';
+
 
 const PAGE_SIZE = 8;
 

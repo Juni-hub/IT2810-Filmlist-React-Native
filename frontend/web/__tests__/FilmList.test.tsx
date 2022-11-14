@@ -1,4 +1,4 @@
-import { fireEvent, getByTestId, getByText, queryByTestId, render,screen,waitFor, waitForElementToBeRemoved } from '@testing-library/react';
+import {render,screen} from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect'
 import '@testing-library/jest-dom'
 import FilmList from '../components/FilmList';
@@ -6,10 +6,8 @@ import { MockedProvider} from "@apollo/client/testing";
 import { SEARCH_FILMS } from '../queries/filmQueries';
 import { Provider } from 'react-redux';
 import store from '../redux/store';
-import renderer from "react-test-renderer";
 import React from 'react';
 import { NativeBaseProvider} from 'native-base';
-
 
 const mocks=  [
   {
@@ -115,7 +113,7 @@ it("should render films", async () => {
 });
 
 /** 
-* Snapshot test for loading page
+* Snapshot test for FilmList component
 */
 describe("Jest Snapshot testing suite",  () => {
   it("Matches DOM Snapshot",   async () => {
