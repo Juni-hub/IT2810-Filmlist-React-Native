@@ -106,16 +106,10 @@ Redux er et Javascript-bibliotek brukt for Local State Management i applikasjone
 I prosjekt 3 brukte gruppen React UI bibliotekene Ant Design og Bootstrap for å designe applikasjonen. I prosjekt 4 skulle vi forandre applikasjonen til en mobil versjon og byttet derfor til React Native. På grunn av dette valgte gruppen å bruke et annet UI bibliotek da Ant Design er utviklet for webapplikasjoner. Gruppen byttet til et UI bibliotek kalt Native-Base som gir støtte for ulike komponenter for React Native. Grunnen til at vi valgte Native-Base var fordi flere av komponetene vi brukte i Ant Design er støttet i Native-Base. Dermed kunne mye av koden fra prosjekt 3 gjenbrukes i de nye komponentene. Fra Native-Base har vi hovedsaklig brukt komponentene Card, Modal og Button. 
 
 ### Testing
-Prosjektet er testet ved bruk av Cypress for ende-til-endetesting og Jest for komponenttesting. I tillegg har vi bruke CI pipeline i GitLab for å passe på at koden i main fungerer gjennom utviklingsprosessen.
+Prosjektet har skrevet enhetstester ved hjelp av Jest. 
 
-#### End-2-end testing
-For å teste med Cypress må man først starte serveren og applikasjonen (se punkt lenger oppe). Deretter skriver man følgende kommandoer i terminalen for å starte Cypress-testen.
-```
-$ cd frontend/web
-$ npx cypress run
-```
 #### Jest
-Jest er et test rammeverk for Javascript og Typescript og kan lett integreres med React Native.  Vi bruker Jest med Babel, og ettersom vi skriver i Typescript sørget vi for at Babel ble konfigurert til å funke med Typescript. I prosjektet vårt har vi skrevet tester for å sjekke at applikasjonen oppfører seg som den skal. I tillegg til dette er det laget en snapshottest. Snapshottest sikrer at brukergrensesnittet ikke endrer seg uventet. Når denne testen kjøres, blir det laget en snapshot fil. Hvis det allerede eksisterer en snapshot fil tilhørende en test, vil denne overskrives. Man kan finne alle snapshot filene i mappen `__snapshots__`. For å teste med Jest må man skrive følgende kommandoer:
+Jest er et test rammeverk for Javascript og Typescript og kan lett integreres med React Native. I prosjektet vårt har vi skrevet tester for å sjekke at applikasjonen oppfører seg som den skal. I tillegg til dette er det laget to snapshottester. Snapshottest sikrer at brukergrensesnittet ikke endrer seg uventet. Når denne testen kjøres, blir det laget to snapshot filer. Hvis det allerede eksisterer en snapshot fil tilhørende en test, vil denne overskrives. Man kan finne alle snapshot filene i mappen `__snapshots__`. For å teste med Jest må man skrive følgende kommandoer:
 ```
 $ cd frontend/web
 $ npm test
