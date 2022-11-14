@@ -68,6 +68,11 @@ Fra prosjekt 3 til prosjekt 4 har vi byttet ut React-klienten med en React Nativ
 
 ### Frontend fil struktur
 ```
+__tests__
+|   __snapshots__
+|   App.test.tsx
+|   FilmCard.test.tsx
+|   FilmList.test.tsx
 components
 │   AddFilm.tsx
 │   FilmItem.tsx
@@ -79,16 +84,14 @@ queries
 redux
 |   actions.ts
 |   store.ts
-test
 utils
 │   Interface.ts
 App.tsx
 ```
-
+- `__tests__` inneholder alle enhetstester og snapshottester for å skjekke at applikasjonen fungerer som tiltenkt.
 - `components` inneholder komponentene som brukes i applikasjonen.
 - `queries` inneholder funksjoner for graphql queries og mutations.
 - `redux` inneholder funktionalitet for å lagre og håndere data fra en Redux Store.
-- `test` inneholder alle enhetstester for å skjekke at applikasjonen fungerer som tiltenkt.
 - `utils` inneholder interfaces brukt i applikasjonen.
 - `App.stx` er root komponenten til applikasjonen.
 
@@ -105,7 +108,7 @@ Apollo Client brukes i React applikasjonen for å koble til GraphQL APIet. I kom
 Redux er et Javascript-bibliotek brukt for Local State Management i applikasjonen. Redux er brukt til å lagre filtrene brukeren har lagt inn.
 
 #### Design komponenter (Native-Base)
-I prosjekt 3 brukte gruppen React UI bibliotekene Ant Design og Bootstrap for å designe applikasjonen. I prosjekt 4 skulle vi forandre applikasjonen til en mobil versjon og byttet derfor til React Native. På grunn av dette valgte gruppen å bruke et annet UI bibliotek da Ant Design er utviklet for webapplikasjoner. Gruppen byttet til et UI bibliotek kalt Native-Base som gir støtte for ulike komponenter for React Native. Grunnen til at vi valgte Native-Base var fordi flere av komponetene vi brukte i Ant Design er støttet i Native-Base. Dermed kunne mye av koden fra prosjekt 3 gjenbrukes i de nye komponentene. Fra Native-Base har vi hovedsaklig brukt komponentene Card, Modal og Button. 
+I prosjekt 3 brukte gruppen React UI bibliotekene Ant Design og Bootstrap for å designe applikasjonen. I prosjekt 4 skulle vi forandre applikasjonen til en mobil versjon og byttet derfor til React Native. På grunn av dette valgte gruppen å bruke et annet UI bibliotek da Ant Design er utviklet for webapplikasjoner. Gruppen byttet til et UI bibliotek kalt Native-Base som gir støtte for ulike komponenter for React Native. Grunnen til at vi valgte Native-Base var fordi flere av komponetene vi brukte i Ant Design er støttet i Native-Base. Dermed kunne mye av koden fra prosjekt 3 gjenbrukes i de nye komponentene. 
 
 ### Testing
 Prosjektet har skrevet enhetstester ved hjelp av Jest. 
