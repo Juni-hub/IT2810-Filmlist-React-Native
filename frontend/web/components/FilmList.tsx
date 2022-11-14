@@ -1,16 +1,17 @@
-import React from 'react';
 import { ADD_FILM, SEARCH_FILMS } from '../queries/filmQueries';
-import { Box, Button, CheckIcon, HStack, Heading, Input, Select, Spinner, Text, ScrollView, Flex, ChevronDownIcon } from 'native-base';
+import { Box, Button, CheckIcon, ChevronDownIcon, Flex, HStack, Heading, Input, ScrollView, Select, Spinner, Text } from 'native-base';
 import { CreateFilm, Film } from '../utils/Interface';
 import { setGenre, setSorting, setTitle, setYear } from '../redux/actions';
 import { useDispatch, useSelector } from "react-redux";
 import { useMutation, useQuery } from '@apollo/client'
+
 import { CreateForm } from './AddFilm';
+import { FilmCard } from './FilmCard';
+import React from 'react';
 import { ShowFilmItem } from './FilmItem';
 import { Store } from "../redux/store";
 import { YearPicker } from './YearPicker';
 import { useState } from 'react';
-import { FilmCard } from './FilmCard';
 
 const PAGE_SIZE = 8;
 
@@ -252,13 +253,16 @@ export default function FilmList() {
                     onCancel={hideFilm} 
                 />
                 <Box paddingTop={4}>
+                    {page != 0? 
                     <Button
                         margin={1}
                         disabled={loading}
+                        
                         onPress={() => (setPage(prev => prev-1))}
                     >
                         <Text color={"white"}>Previous</Text>
                     </Button>
+                    : null}
                     <Button
                         margin={1}
                         disabled={loading}
