@@ -63,6 +63,7 @@ exports[`Jest Snapshot testing suite Matches DOM Snapshot 1`] = `
           }
         >
           <Text
+            data-testid="title"
             dataSet={{}}
             style={
               {
@@ -105,6 +106,7 @@ exports[`Jest Snapshot testing suite Matches DOM Snapshot 1`] = `
           }
         >
           <Text
+            data-testid="year"
             dataSet={{}}
             style={
               {

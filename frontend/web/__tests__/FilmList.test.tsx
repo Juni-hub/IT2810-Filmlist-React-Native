@@ -1,4 +1,4 @@
-import { getByTestId, getByText, queryByTestId, render,screen,waitFor, waitForElementToBeRemoved } from '@testing-library/react';
+import { fireEvent, getByTestId, getByText, queryByTestId, render,screen,waitFor, waitForElementToBeRemoved } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect'
 import '@testing-library/jest-dom'
 import FilmList from '../components/FilmList';
@@ -9,7 +9,7 @@ import store from '../redux/store';
 import renderer from "react-test-renderer";
 import React from 'react';
 import { NativeBaseProvider} from 'native-base';
-//import { waitFor } from "@testing-library/react-native";
+
 
 const mocks=  [
   {
@@ -44,6 +44,7 @@ const inset = {
   frame: { x: 0, y: 0, width: 0, height: 0 },
   insets: { top: 0, left: 0, right: 0, bottom: 0 },
 };
+
 /** 
 * Test for loading page
 */
@@ -90,24 +91,8 @@ it("should show error UI", async () => {
     </Provider>
     </NativeBaseProvider>
   );
+  
   expect(await screen.findByText("Something went wrong when trying to connect to the server...")).toBeInTheDocument();
-
-});
-
-it("check if reset button works", async () => {
-  const {container} = render(
-    <NativeBaseProvider initialWindowMetrics={inset}>
-    <Provider store={store}>
-    <MockedProvider mocks={mocks} addTypename={false}>
-      <FilmList  />
-    </MockedProvider>
-    </Provider>
-    </NativeBaseProvider>
-  );
-  await screen.findByText('After Dark in Central Park');
-  const button = getByTestId(container,"test-element");
-  expect(button).toBeInTheDocument();  
-  expect(screen.getByTestId("header")).toHaveTextContent("Filmdatabase");
 
 });
 

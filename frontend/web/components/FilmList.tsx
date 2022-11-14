@@ -174,7 +174,7 @@ export default function FilmList() {
                                     setFilterYear(true);
                                 }}
                             >
-                                <Text data-testid={"test-element"}>Filter on year</Text>
+                                <Text>Filter on year</Text>
                             </Button>
                         </Box>
                         <YearPicker
