@@ -1,10 +1,9 @@
 import { ADD_FILM, SEARCH_FILMS } from '../queries/filmQueries';
-import { Box, Button, Flex, HStack, Heading, Input, ScrollView, Select, Spinner, Text } from 'native-base';
+import { Box, Button, Flex, HStack, CheckIcon, ChevronDownIcon, Input, ScrollView, Select, Spinner, Text, Heading } from 'native-base';
 import { CreateFilm, Film } from '../utils/Interface';
 import { setGenre, setSorting, setTitle, setYear } from '../redux/actions';
 import { useDispatch, useSelector } from "react-redux";
 import { useMutation, useQuery } from '@apollo/client'
-
 import { CreateForm } from './AddFilm';
 import { FilmCard } from './FilmCard';
 import React from 'react';
@@ -106,6 +105,7 @@ export default function FilmList() {
     * Resets the filters in redux
     */
     function useReset() {
+        setPage(0);
         dispatch(setTitle(""))
         dispatch(setGenre(""))
         dispatch(setYear("0"))
@@ -123,7 +123,7 @@ export default function FilmList() {
         {!loading && !error && 
             <Box justifyContent="center" margin={4} >    
                 <Box paddingBottom={3}>
-                    <Heading margin={4} color={"white"} marginBottom={5} marginTop={55}>Filmdatabase</Heading>
+                    <Heading margin={4} color={"white"} marginBottom={5} marginTop={55}>FilmBase: Find a film!</Heading>
                     <Box margin={1}>
                         <Input
                             backgroundColor="white"  
@@ -134,7 +134,7 @@ export default function FilmList() {
                             fontSize={15}
                             onChangeText={(e: string) => setSearchTitle(e)}
                             InputRightElement={
-                                <Button size="xs" rounded="none" w="1/4" h="full" onPress={() => dispatch(setTitle(searchTitle))}>
+                                <Button size="xs" rounded="none" w="1/4" h="full" onPress={() => {setPage(0); dispatch(setTitle(searchTitle));}}>
                                     { <Text color={"white"}>Search</Text> }
                                 </Button>
                             }
@@ -149,11 +149,11 @@ export default function FilmList() {
                                 borderColor={"600"}
                                 placeholder="Filter genre" 
                                 fontSize={15} 
-                                onValueChange={e => dispatch(setGenre(e))} 
+                                onValueChange={e => {setPage(0);dispatch(setGenre(e));}} 
                                 _selectedItem={{
                                     bg: "cyan.600",
                                     rounded: "10",
-                                    /*endIcon: <CheckIcon color={"black"} size={6} />*/
+                                    endIcon: <CheckIcon color={"black"} size={6} />
                                 }} 
                                 accessibilityLabel="Select genre"
                             >
@@ -179,11 +179,11 @@ export default function FilmList() {
                                 }} 
                                 borderColor={"600"} 
                                 fontSize={15} 
-                                onValueChange={e => dispatch(setSorting(e))} 
+                                onValueChange={e => {setPage(0); dispatch(setSorting(e));}} 
                                 _selectedItem={{
                                     bg: "cyan.600",
                                     rounded: "10",
-                                    /*endIcon: <CheckIcon color={"black"} size={6} />*/
+                                    endIcon: <CheckIcon color={"black"} size={6} />
                                 }} 
                                 accessibilityLabel="Sort on year"
                             >
@@ -201,11 +201,11 @@ export default function FilmList() {
                                 borderWidth="1"
                                 fontSize={15}
                                 onPress={() => {
-                                    setFilterYear(true);
-                                }}
+                                   {setPage(0); setFilterYear(true);
+                                }}}
                                 accessibilityLabel="Filter on year"
-                            >
-                                <Text color={"grey"}>Filter year </Text>
+                            >   
+                            {year === "0" ? <Text color={"grey"}>Filter year  <ChevronDownIcon color={"grey"}  size={6} /></Text> : <Text color={"grey"}>{year}  <ChevronDownIcon color={"grey"} size={6} /></Text>}
                             </Button>
                         </Box>
                         <YearPicker
@@ -223,7 +223,7 @@ export default function FilmList() {
                         </Box>
                         <Box marginTop={2} margin={1}>
                             <Button
-                                onPress={() => { setOpenCreate(true); }}
+                                onPress={() => { setPage(0); setOpenCreate(true); }}
                                 accessibilityLabel="Create new film"
                             >
                                 <Text color={"white"}>Add New Film</Text>
