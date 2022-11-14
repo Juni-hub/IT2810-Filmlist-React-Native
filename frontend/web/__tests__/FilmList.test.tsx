@@ -57,7 +57,7 @@ it("renders without error", async () => {
     </NativeBaseProvider>
   );
   
- expect(await screen.findByText("Loading")).toBeInTheDocument();  
+ expect(await screen.findByText("Loading...")).toBeInTheDocument();  
 });
 
 /** 

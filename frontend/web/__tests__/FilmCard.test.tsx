@@ -1,7 +1,5 @@
 import '@testing-library/jest-dom'
-
 import { render, screen, } from '@testing-library/react';
-
 import {FilmCard} from '../components/FilmCard';
 import { NativeBaseProvider } from 'native-base';
 import { Provider } from 'react-redux';

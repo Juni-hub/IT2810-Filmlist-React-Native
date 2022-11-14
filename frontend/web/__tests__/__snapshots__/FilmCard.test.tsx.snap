@@ -16,7 +16,8 @@ exports[`Jest Snapshot testing suite Matches DOM Snapshot 1`] = `
     dataSet={{}}
     style={
       {
-        "borderColor": "#e5e7eb",
+        "backgroundColor": "#FFFFFF",
+        "borderColor": 600,
         "borderRadius": 6,
         "borderWidth": 1,
         "marginBottom": 4,
@@ -70,11 +71,11 @@ exports[`Jest Snapshot testing suite Matches DOM Snapshot 1`] = `
                 "backgroundColor": undefined,
                 "color": "#171717",
                 "fontFamily": undefined,
-                "fontSize": 14,
+                "fontSize": 20,
                 "fontStyle": "normal",
                 "fontWeight": "400",
                 "letterSpacing": 0,
-                "lineHeight": 21,
+                "lineHeight": 30,
                 "textDecorationLine": undefined,
               }
             }
@@ -113,11 +114,11 @@ exports[`Jest Snapshot testing suite Matches DOM Snapshot 1`] = `
                 "backgroundColor": undefined,
                 "color": "#171717",
                 "fontFamily": undefined,
-                "fontSize": 14,
+                "fontSize": 15,
                 "fontStyle": "normal",
                 "fontWeight": "400",
                 "letterSpacing": 0,
-                "lineHeight": 21,
+                "lineHeight": 22.5,
                 "textDecorationLine": undefined,
               }
             }
