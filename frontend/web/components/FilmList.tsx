@@ -1,6 +1,6 @@
 import React from 'react';
 import { ADD_FILM, SEARCH_FILMS } from '../queries/filmQueries';
-import { Box, Button, CheckIcon, HStack, Heading, Input, Select, Spinner, Text, ScrollView, Flex, ChevronDownIcon } from 'native-base';
+import { Box, Button, HStack, Heading, Input, Select, Spinner, Text, ScrollView, Flex } from 'native-base';
 import { CreateFilm, Film } from '../utils/Interface';
 import { setGenre, setSorting, setTitle, setYear } from '../redux/actions';
 import { useDispatch, useSelector } from "react-redux";
@@ -152,7 +152,7 @@ export default function FilmList() {
                                 _selectedItem={{
                                     bg: "cyan.600",
                                     rounded: "10",
-                                    endIcon: <CheckIcon color={"black"} size={6} />
+                                    /*endIcon: <CheckIcon color={"black"} size={6} />*/
                                 }} 
                                 accessibilityLabel="Select genre"
                             >
@@ -182,7 +182,7 @@ export default function FilmList() {
                                 _selectedItem={{
                                     bg: "cyan.600",
                                     rounded: "10",
-                                    endIcon: <CheckIcon color={"black"} size={6} />
+                                    /*endIcon: <CheckIcon color={"black"} size={6} />*/
                                 }} 
                                 accessibilityLabel="Sort on year"
                             >
@@ -204,7 +204,7 @@ export default function FilmList() {
                                 }}
                                 accessibilityLabel="Filter on year"
                             >
-                                <Text color={"grey"}>Filter year <ChevronDownIcon paddingLeft={1} color={"grey"} size={6}/></Text>
+                                <Text color={"grey"}>Filter year </Text>
                             </Button>
                         </Box>
                         <YearPicker
