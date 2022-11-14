@@ -265,7 +265,7 @@ export default function FilmList() {
                         <Text color={"white"}>Previous</Text>
                     </Button>
                     : null}
-                    {data != 0?
+                    {data.getFilteredPosts != 0?
                     <Button
                         margin={1}
                         disabled={loading}
