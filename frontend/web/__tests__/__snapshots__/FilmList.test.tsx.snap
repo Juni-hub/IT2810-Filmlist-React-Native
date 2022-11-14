@@ -18,7 +18,7 @@ exports[`Jest Snapshot testing suite Matches DOM Snapshot 1`] = `
               dataset="[object Object]"
               style="letter-spacing: 0; line-height: 30; color: rgb(255, 255, 255); margin: 55px 16px 20px 16px; font-weight: 700; font-style: normal; font-size: 24px;"
             >
-              Filmdatabase
+              FilmBase: Find a film!
             </text>
             <view
               dataset="[object Object]"
@@ -343,7 +343,7 @@ exports[`Jest Snapshot testing suite Matches DOM Snapshot 1`] = `
                         dataset="[object Object]"
                         style="letter-spacing: 0; line-height: 21; color: grey; font-weight: 400; font-style: normal; font-size: 14px;"
                       >
-                        Filter year 
+                        Filter year  
                         <rnsvgsvgview
                           accessibilityrole="image"
                           align="xMidYMid"
@@ -910,29 +910,6 @@ exports[`Jest Snapshot testing suite Matches DOM Snapshot 1`] = `
                     dataset="[object Object]"
                     style="letter-spacing: 0; line-height: 21; color: rgb(255, 255, 255); font-weight: 400; font-style: normal; font-size: 14px;"
                   >
-                    Previous
-                  </text>
-                </view>
-              </view>
-            </view>
-            <view
-              accessibilityrole="button"
-              colorscheme="primary"
-              dataset="[object Object]"
-              focusable="true"
-              style="border-radius: 4px; flex-direction: row; justify-content: center; align-items: center; background-color: rgb(8, 145, 178); padding: 10px 12px 10px 12px; margin: 4px 4px 4px 4px;"
-            >
-              <view
-                dataset="[object Object]"
-                style="flex-direction: row; align-items: center;"
-              >
-                <view
-                  dataset="[object Object]"
-                >
-                  <text
-                    dataset="[object Object]"
-                    style="letter-spacing: 0; line-height: 21; color: rgb(255, 255, 255); font-weight: 400; font-style: normal; font-size: 14px;"
-                  >
                     Next
                   </text>
                 </view>
@@ -957,7 +934,7 @@ exports[`Jest Snapshot testing suite Matches DOM Snapshot 1`] = `
             dataset="[object Object]"
             style="letter-spacing: 0; line-height: 30; color: rgb(255, 255, 255); margin: 55px 16px 20px 16px; font-weight: 700; font-style: normal; font-size: 24px;"
           >
-            Filmdatabase
+            FilmBase: Find a film!
           </text>
           <view
             dataset="[object Object]"
@@ -1282,7 +1259,7 @@ exports[`Jest Snapshot testing suite Matches DOM Snapshot 1`] = `
                       dataset="[object Object]"
                       style="letter-spacing: 0; line-height: 21; color: grey; font-weight: 400; font-style: normal; font-size: 14px;"
                     >
-                      Filter year 
+                      Filter year  
                       <rnsvgsvgview
                         accessibilityrole="image"
                         align="xMidYMid"
@@ -1831,29 +1808,6 @@ exports[`Jest Snapshot testing suite Matches DOM Snapshot 1`] = `
           dataset="[object Object]"
           style="padding-top: 16px;"
         >
-          <view
-            accessibilityrole="button"
-            colorscheme="primary"
-            dataset="[object Object]"
-            focusable="true"
-            style="border-radius: 4px; flex-direction: row; justify-content: center; align-items: center; background-color: rgb(8, 145, 178); padding: 10px 12px 10px 12px; margin: 4px 4px 4px 4px;"
-          >
-            <view
-              dataset="[object Object]"
-              style="flex-direction: row; align-items: center;"
-            >
-              <view
-                dataset="[object Object]"
-              >
-                <text
-                  dataset="[object Object]"
-                  style="letter-spacing: 0; line-height: 21; color: rgb(255, 255, 255); font-weight: 400; font-style: normal; font-size: 14px;"
-                >
-                  Previous
-                </text>
-              </view>
-            </view>
-          </view>
           <view
             accessibilityrole="button"
             colorscheme="primary"

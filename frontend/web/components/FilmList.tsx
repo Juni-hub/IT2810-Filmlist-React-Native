@@ -247,7 +247,7 @@ export default function FilmList() {
                             handleClick={() => handleClick(post)}
                         /> 
                     ))
-                    : <Text padding={3}  color={"white"} fontSize={22}>No more films found</Text>}
+                    : <Text padding={3} color={"white"} fontSize={22}>No more films found</Text>}
                 </ScrollView>
                 <ShowFilmItem 
                     film={currentPost} 
