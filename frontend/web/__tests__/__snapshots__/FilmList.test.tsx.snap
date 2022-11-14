@@ -1,0 +1,1936 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Jest Snapshot testing suite Matches DOM Snapshot 1`] = `
+{
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <rncsafeareaprovider>
+        <view
+          dataset="[object Object]"
+          style="justify-content: center; margin: 16px 16px 16px 16px;"
+        >
+          <view
+            dataset="[object Object]"
+            style="padding-bottom: 12px;"
+          >
+            <text
+              dataset="[object Object]"
+              style="letter-spacing: 0; line-height: 30; color: rgb(255, 255, 255); margin: 55px 16px 20px 16px; font-weight: 700; font-style: normal; font-size: 24px;"
+            >
+              Filmdatabase
+            </text>
+            <view
+              dataset="[object Object]"
+              style="margin: 4px 4px 4px 4px;"
+            >
+              <view
+                dataset="[object Object]"
+                style="flex-direction: row; align-items: center; overflow: hidden; border-width: 1px; border-radius: 4px; background-color: rgb(255, 255, 255);"
+              >
+                <textinput
+                  accessibilitylabel="Search by title"
+                  dataset="[object Object]"
+                  placeholder="Search for title"
+                  placeholdertextcolor="#a3a3a3"
+                  style="width: 100%; color: rgb(23, 23, 23); font-size: 15px; padding: 8px 12px 8px 12px; font-weight: 400; font-style: normal; background-color: transparent; flex: 1; height: 100%;"
+                  value=""
+                />
+                <view
+                  dataset="[object Object]"
+                />
+                <view
+                  accessibilityrole="button"
+                  colorscheme="primary"
+                  dataset="[object Object]"
+                  focusable="true"
+                  style="border-radius: 0; flex-direction: row; justify-content: center; align-items: center; background-color: rgb(8, 145, 178); width: 25%; height: 100%; padding: 8px 12px 8px 12px;"
+                >
+                  <view
+                    dataset="[object Object]"
+                    style="flex-direction: row; align-items: center;"
+                  >
+                    <view
+                      dataset="[object Object]"
+                    >
+                      <text
+                        dataset="[object Object]"
+                        style="letter-spacing: 0; line-height: 21; color: rgb(255, 255, 255); font-weight: 400; font-style: normal; font-size: 14px;"
+                      >
+                        Search
+                      </text>
+                    </view>
+                  </view>
+                </view>
+              </view>
+            </view>
+            <view
+              dataset="[object Object]"
+              style="display: flex; flex-direction: row; justify-content: center;"
+            >
+              <view
+                dataset="[object Object]"
+                style="width: 45%; margin: 8px 8px 8px 8px;"
+              >
+                <view
+                  accessibilitylabel="Select genre"
+                  accessibilityrole="button"
+                  dataset="[object Object]"
+                  focusable="true"
+                  style="margin-right: 0px; margin-left: 0px;"
+                >
+                  <view
+                    dataset="[object Object]"
+                    style="flex-direction: row; align-items: center; overflow: hidden; border-width: 1px; border-radius: 4px; background-color: rgb(255, 255, 255);"
+                  >
+                    <textinput
+                      aria-hidden="true"
+                      dataset="[object Object]"
+                      focusable="false"
+                      importantforaccessibility="no"
+                      placeholder="Filter genre"
+                      placeholdertextcolor="#a3a3a3"
+                      pointer-events="none"
+                      selection="[object Object]"
+                      style="width: 100%; color: rgb(23, 23, 23); font-size: 15px; padding: 8px 12px 8px 12px; font-weight: 400; font-style: normal; background-color: transparent; flex: 1; height: 100%;"
+                      value=""
+                    />
+                    <view
+                      dataset="[object Object]"
+                    />
+                    <rnsvgsvgview
+                      accessibilityrole="image"
+                      align="xMidYMid"
+                      bbheight="24"
+                      bbwidth="24"
+                      color="4285756275"
+                      dataset="[object Object]"
+                      focusable="false"
+                      meetorslice="0"
+                      minx="0"
+                      miny="0"
+                      stroke=""
+                      tintcolor="4285756275"
+                      vbheight="24"
+                      vbwidth="24"
+                    >
+                      <rnsvggroup
+                        fill="0,4278190080"
+                        fill-opacity="1"
+                        fill-rule="1"
+                        font="[object Object]"
+                        matrix="1,0,0,1,0,0"
+                        opacity="1"
+                        originx="0"
+                        originy="0"
+                        proplist="stroke"
+                        rotation="0"
+                        scalex="1"
+                        scaley="1"
+                        skewx="0"
+                        skewy="0"
+                        stroke-linecap="0"
+                        stroke-linejoin="0"
+                        stroke-miterlimit="4"
+                        stroke-opacity="1"
+                        stroke-width="1"
+                        vector-effect="0"
+                        x="0"
+                        y="0"
+                      >
+                        <rnsvggroup
+                          fill="0,4278190080"
+                          fill-opacity="1"
+                          fill-rule="1"
+                          font="[object Object]"
+                          matrix="1,0,0,1,0,0"
+                          opacity="1"
+                          originx="0"
+                          originy="0"
+                          proplist=""
+                          rotation="0"
+                          scalex="1"
+                          scaley="1"
+                          skewx="0"
+                          skewy="0"
+                          stroke-linecap="0"
+                          stroke-linejoin="0"
+                          stroke-miterlimit="4"
+                          stroke-opacity="1"
+                          stroke-width="1"
+                          vector-effect="0"
+                          x="0"
+                          y="0"
+                        >
+                          <rnsvgpath
+                            d="M20.2286 6L11.9973 14.3785L3.76862 6.00268L2 7.80293L12 18L22 7.80293L20.2286 6Z"
+                            fill="2"
+                            fill-opacity="1"
+                            fill-rule="1"
+                            matrix="1,0,0,1,0,0"
+                            opacity="1"
+                            originx="0"
+                            originy="0"
+                            proplist="fill,stroke"
+                            rotation="0"
+                            scalex="1"
+                            scaley="1"
+                            skewx="0"
+                            skewy="0"
+                            stroke-linecap="0"
+                            stroke-linejoin="0"
+                            stroke-miterlimit="4"
+                            stroke-opacity="1"
+                            stroke-width="1"
+                            vector-effect="0"
+                            x="0"
+                            y="0"
+                          />
+                        </rnsvggroup>
+                      </rnsvggroup>
+                    </rnsvgsvgview>
+                  </view>
+                </view>
+              </view>
+              <view
+                dataset="[object Object]"
+                style="width: 45%; margin: 8px 8px 8px 8px;"
+              >
+                <view
+                  accessibilitylabel="Sort on year"
+                  accessibilityrole="button"
+                  dataset="[object Object]"
+                  focusable="true"
+                  style="margin-right: 0px; margin-left: 0px;"
+                >
+                  <view
+                    dataset="[object Object]"
+                    style="flex-direction: row; align-items: center; overflow: hidden; border-width: 1px; border-radius: 4px; background-color: rgb(255, 255, 255);"
+                  >
+                    <textinput
+                      aria-hidden="true"
+                      dataset="[object Object]"
+                      focusable="false"
+                      importantforaccessibility="no"
+                      placeholdertextcolor="#a3a3a3"
+                      pointer-events="none"
+                      selection="[object Object]"
+                      style="width: 100%; color: rgb(23, 23, 23); font-size: 15px; padding: 8px 12px 8px 12px; font-weight: 400; font-style: normal; background-color: transparent; flex: 1; height: 100%;"
+                      value="Ascending"
+                    />
+                    <view
+                      dataset="[object Object]"
+                    />
+                    <rnsvgsvgview
+                      accessibilityrole="image"
+                      align="xMidYMid"
+                      bbheight="24"
+                      bbwidth="24"
+                      color="4285756275"
+                      dataset="[object Object]"
+                      focusable="false"
+                      meetorslice="0"
+                      minx="0"
+                      miny="0"
+                      stroke=""
+                      tintcolor="4285756275"
+                      vbheight="24"
+                      vbwidth="24"
+                    >
+                      <rnsvggroup
+                        fill="0,4278190080"
+                        fill-opacity="1"
+                        fill-rule="1"
+                        font="[object Object]"
+                        matrix="1,0,0,1,0,0"
+                        opacity="1"
+                        originx="0"
+                        originy="0"
+                        proplist="stroke"
+                        rotation="0"
+                        scalex="1"
+                        scaley="1"
+                        skewx="0"
+                        skewy="0"
+                        stroke-linecap="0"
+                        stroke-linejoin="0"
+                        stroke-miterlimit="4"
+                        stroke-opacity="1"
+                        stroke-width="1"
+                        vector-effect="0"
+                        x="0"
+                        y="0"
+                      >
+                        <rnsvggroup
+                          fill="0,4278190080"
+                          fill-opacity="1"
+                          fill-rule="1"
+                          font="[object Object]"
+                          matrix="1,0,0,1,0,0"
+                          opacity="1"
+                          originx="0"
+                          originy="0"
+                          proplist=""
+                          rotation="0"
+                          scalex="1"
+                          scaley="1"
+                          skewx="0"
+                          skewy="0"
+                          stroke-linecap="0"
+                          stroke-linejoin="0"
+                          stroke-miterlimit="4"
+                          stroke-opacity="1"
+                          stroke-width="1"
+                          vector-effect="0"
+                          x="0"
+                          y="0"
+                        >
+                          <rnsvgpath
+                            d="M20.2286 6L11.9973 14.3785L3.76862 6.00268L2 7.80293L12 18L22 7.80293L20.2286 6Z"
+                            fill="2"
+                            fill-opacity="1"
+                            fill-rule="1"
+                            matrix="1,0,0,1,0,0"
+                            opacity="1"
+                            originx="0"
+                            originy="0"
+                            proplist="fill,stroke"
+                            rotation="0"
+                            scalex="1"
+                            scaley="1"
+                            skewx="0"
+                            skewy="0"
+                            stroke-linecap="0"
+                            stroke-linejoin="0"
+                            stroke-miterlimit="4"
+                            stroke-opacity="1"
+                            stroke-width="1"
+                            vector-effect="0"
+                            x="0"
+                            y="0"
+                          />
+                        </rnsvggroup>
+                      </rnsvggroup>
+                    </rnsvgsvgview>
+                  </view>
+                </view>
+              </view>
+            </view>
+            <view
+              dataset="[object Object]"
+              style="display: flex; flex-direction: row; justify-content: center;"
+            >
+              <view
+                dataset="[object Object]"
+                style="margin: 8px 4px 4px 4px;"
+              >
+                <view
+                  accessibilitylabel="Filter on year"
+                  accessibilityrole="button"
+                  colorscheme="primary"
+                  dataset="[object Object]"
+                  focusable="true"
+                  style="border-radius: 4px; flex-direction: row; justify-content: center; align-items: center; background-color: rgb(255, 255, 255); border-width: 1px; font-size: 15px; padding: 10px 12px 10px 12px;"
+                >
+                  <view
+                    dataset="[object Object]"
+                    style="flex-direction: row; align-items: center;"
+                  >
+                    <view
+                      dataset="[object Object]"
+                    >
+                      <text
+                        dataset="[object Object]"
+                        style="letter-spacing: 0; line-height: 21; color: grey; font-weight: 400; font-style: normal; font-size: 14px;"
+                      >
+                        Filter year 
+                        <rnsvgsvgview
+                          accessibilityrole="image"
+                          align="xMidYMid"
+                          bbheight="24"
+                          bbwidth="24"
+                          color="4286611584"
+                          dataset="[object Object]"
+                          focusable="false"
+                          meetorslice="0"
+                          minx="0"
+                          miny="0"
+                          stroke=""
+                          tintcolor="4286611584"
+                          vbheight="24"
+                          vbwidth="24"
+                        >
+                          <rnsvggroup
+                            fill="0,4278190080"
+                            fill-opacity="1"
+                            fill-rule="1"
+                            font="[object Object]"
+                            matrix="1,0,0,1,0,0"
+                            opacity="1"
+                            originx="0"
+                            originy="0"
+                            proplist="stroke"
+                            rotation="0"
+                            scalex="1"
+                            scaley="1"
+                            skewx="0"
+                            skewy="0"
+                            stroke-linecap="0"
+                            stroke-linejoin="0"
+                            stroke-miterlimit="4"
+                            stroke-opacity="1"
+                            stroke-width="1"
+                            vector-effect="0"
+                            x="0"
+                            y="0"
+                          >
+                            <rnsvggroup
+                              fill="0,4278190080"
+                              fill-opacity="1"
+                              fill-rule="1"
+                              font="[object Object]"
+                              matrix="1,0,0,1,0,0"
+                              opacity="1"
+                              originx="0"
+                              originy="0"
+                              proplist=""
+                              rotation="0"
+                              scalex="1"
+                              scaley="1"
+                              skewx="0"
+                              skewy="0"
+                              stroke-linecap="0"
+                              stroke-linejoin="0"
+                              stroke-miterlimit="4"
+                              stroke-opacity="1"
+                              stroke-width="1"
+                              vector-effect="0"
+                              x="0"
+                              y="0"
+                            >
+                              <rnsvgpath
+                                d="M20.2286 6L11.9973 14.3785L3.76862 6.00268L2 7.80293L12 18L22 7.80293L20.2286 6Z"
+                                fill="2"
+                                fill-opacity="1"
+                                fill-rule="1"
+                                matrix="1,0,0,1,0,0"
+                                opacity="1"
+                                originx="0"
+                                originy="0"
+                                proplist="fill,stroke"
+                                rotation="0"
+                                scalex="1"
+                                scaley="1"
+                                skewx="0"
+                                skewy="0"
+                                stroke-linecap="0"
+                                stroke-linejoin="0"
+                                stroke-miterlimit="4"
+                                stroke-opacity="1"
+                                stroke-width="1"
+                                vector-effect="0"
+                                x="0"
+                                y="0"
+                              />
+                            </rnsvggroup>
+                          </rnsvggroup>
+                        </rnsvgsvgview>
+                      </text>
+                    </view>
+                  </view>
+                </view>
+              </view>
+              <view
+                dataset="[object Object]"
+                style="display: flex; align-items: center; justify-content: center;"
+              />
+              <view
+                dataset="[object Object]"
+                style="margin: 8px 4px 4px 4px;"
+              >
+                <view
+                  accessibilitylabel="Reset filters"
+                  accessibilityrole="button"
+                  colorscheme="primary"
+                  dataset="[object Object]"
+                  focusable="true"
+                  style="border-radius: 4px; flex-direction: row; justify-content: center; align-items: center; background-color: rgb(8, 145, 178); padding: 10px 12px 10px 12px;"
+                >
+                  <view
+                    dataset="[object Object]"
+                    style="flex-direction: row; align-items: center;"
+                  >
+                    <view
+                      dataset="[object Object]"
+                    >
+                      <text
+                        dataset="[object Object]"
+                        style="letter-spacing: 0; line-height: 21; color: rgb(255, 255, 255); font-weight: 400; font-style: normal; font-size: 14px;"
+                      >
+                        Reset Filters
+                      </text>
+                    </view>
+                  </view>
+                </view>
+              </view>
+              <view
+                dataset="[object Object]"
+                style="margin: 8px 4px 4px 4px;"
+              >
+                <view
+                  accessibilitylabel="Create new film"
+                  accessibilityrole="button"
+                  colorscheme="primary"
+                  dataset="[object Object]"
+                  focusable="true"
+                  style="border-radius: 4px; flex-direction: row; justify-content: center; align-items: center; background-color: rgb(8, 145, 178); padding: 10px 12px 10px 12px;"
+                >
+                  <view
+                    dataset="[object Object]"
+                    style="flex-direction: row; align-items: center;"
+                  >
+                    <view
+                      dataset="[object Object]"
+                    >
+                      <text
+                        dataset="[object Object]"
+                        style="letter-spacing: 0; line-height: 21; color: rgb(255, 255, 255); font-weight: 400; font-style: normal; font-size: 14px;"
+                      >
+                        Add New Film
+                      </text>
+                    </view>
+                  </view>
+                </view>
+                <view
+                  dataset="[object Object]"
+                  style="display: flex; align-items: center; justify-content: center;"
+                />
+              </view>
+            </view>
+          </view>
+          <rctscrollview
+            contentcontainerstyle="[object Object],[object Object],[object Object]"
+            dataset="[object Object]"
+            style="width: 100%; height: 384px;"
+          >
+            <view>
+              <view
+                dataset="[object Object]"
+                style="background-color: rgb(255, 255, 255); border-width: 1px; border-radius: 6px; width: 85%; margin: 20px 20px 4px 20px;"
+              >
+                <view
+                  dataset="[object Object]"
+                  focusable="true"
+                >
+                  <view
+                    dataset="[object Object]"
+                    style="width: 100%;"
+                  >
+                    <view
+                      dataset="[object Object]"
+                      style="padding: 16px 16px 12px 16px;"
+                    >
+                      <text
+                        data-testid="title"
+                        dataset="[object Object]"
+                        style="color: rgb(23, 23, 23); letter-spacing: 0; line-height: 30; font-weight: 400; font-style: normal; font-size: 20px;"
+                      >
+                        After Dark in Central Park
+                      </text>
+                    </view>
+                    <view
+                      aria-orientation="horizontal"
+                      dataset="[object Object]"
+                      style="background-color: rgb(212, 212, 212); width: 100%; height: 1px;"
+                      thickness="1"
+                    />
+                    <view
+                      dataset="[object Object]"
+                      style="padding: 24px 16px 24px 16px;"
+                    >
+                      <text
+                        data-testid="year"
+                        dataset="[object Object]"
+                        style="color: rgb(23, 23, 23); letter-spacing: 0; line-height: 22.5; font-weight: 400; font-style: normal; font-size: 15px;"
+                      >
+                        Year Released: 
+                        1900
+                      </text>
+                    </view>
+                  </view>
+                </view>
+              </view>
+              <view
+                dataset="[object Object]"
+                style="background-color: rgb(255, 255, 255); border-width: 1px; border-radius: 6px; width: 85%; margin: 20px 20px 4px 20px;"
+              >
+                <view
+                  dataset="[object Object]"
+                  focusable="true"
+                >
+                  <view
+                    dataset="[object Object]"
+                    style="width: 100%;"
+                  >
+                    <view
+                      dataset="[object Object]"
+                      style="padding: 16px 16px 12px 16px;"
+                    >
+                      <text
+                        data-testid="title"
+                        dataset="[object Object]"
+                        style="color: rgb(23, 23, 23); letter-spacing: 0; line-height: 30; font-weight: 400; font-style: normal; font-size: 20px;"
+                      >
+                        Boarding School Girls' Pajama Parade
+                      </text>
+                    </view>
+                    <view
+                      aria-orientation="horizontal"
+                      dataset="[object Object]"
+                      style="background-color: rgb(212, 212, 212); width: 100%; height: 1px;"
+                      thickness="1"
+                    />
+                    <view
+                      dataset="[object Object]"
+                      style="padding: 24px 16px 24px 16px;"
+                    >
+                      <text
+                        data-testid="year"
+                        dataset="[object Object]"
+                        style="color: rgb(23, 23, 23); letter-spacing: 0; line-height: 22.5; font-weight: 400; font-style: normal; font-size: 15px;"
+                      >
+                        Year Released: 
+                        1900
+                      </text>
+                    </view>
+                  </view>
+                </view>
+              </view>
+              <view
+                dataset="[object Object]"
+                style="background-color: rgb(255, 255, 255); border-width: 1px; border-radius: 6px; width: 85%; margin: 20px 20px 4px 20px;"
+              >
+                <view
+                  dataset="[object Object]"
+                  focusable="true"
+                >
+                  <view
+                    dataset="[object Object]"
+                    style="width: 100%;"
+                  >
+                    <view
+                      dataset="[object Object]"
+                      style="padding: 16px 16px 12px 16px;"
+                    >
+                      <text
+                        data-testid="title"
+                        dataset="[object Object]"
+                        style="color: rgb(23, 23, 23); letter-spacing: 0; line-height: 30; font-weight: 400; font-style: normal; font-size: 20px;"
+                      >
+                        Buffalo Bill's Wild West Parad
+                      </text>
+                    </view>
+                    <view
+                      aria-orientation="horizontal"
+                      dataset="[object Object]"
+                      style="background-color: rgb(212, 212, 212); width: 100%; height: 1px;"
+                      thickness="1"
+                    />
+                    <view
+                      dataset="[object Object]"
+                      style="padding: 24px 16px 24px 16px;"
+                    >
+                      <text
+                        data-testid="year"
+                        dataset="[object Object]"
+                        style="color: rgb(23, 23, 23); letter-spacing: 0; line-height: 22.5; font-weight: 400; font-style: normal; font-size: 15px;"
+                      >
+                        Year Released: 
+                        1900
+                      </text>
+                    </view>
+                  </view>
+                </view>
+              </view>
+              <view
+                dataset="[object Object]"
+                style="background-color: rgb(255, 255, 255); border-width: 1px; border-radius: 6px; width: 85%; margin: 20px 20px 4px 20px;"
+              >
+                <view
+                  dataset="[object Object]"
+                  focusable="true"
+                >
+                  <view
+                    dataset="[object Object]"
+                    style="width: 100%;"
+                  >
+                    <view
+                      dataset="[object Object]"
+                      style="padding: 16px 16px 12px 16px;"
+                    >
+                      <text
+                        data-testid="title"
+                        dataset="[object Object]"
+                        style="color: rgb(23, 23, 23); letter-spacing: 0; line-height: 30; font-weight: 400; font-style: normal; font-size: 20px;"
+                      >
+                        Caught
+                      </text>
+                    </view>
+                    <view
+                      aria-orientation="horizontal"
+                      dataset="[object Object]"
+                      style="background-color: rgb(212, 212, 212); width: 100%; height: 1px;"
+                      thickness="1"
+                    />
+                    <view
+                      dataset="[object Object]"
+                      style="padding: 24px 16px 24px 16px;"
+                    >
+                      <text
+                        data-testid="year"
+                        dataset="[object Object]"
+                        style="color: rgb(23, 23, 23); letter-spacing: 0; line-height: 22.5; font-weight: 400; font-style: normal; font-size: 15px;"
+                      >
+                        Year Released: 
+                        1900
+                      </text>
+                    </view>
+                  </view>
+                </view>
+              </view>
+              <view
+                dataset="[object Object]"
+                style="background-color: rgb(255, 255, 255); border-width: 1px; border-radius: 6px; width: 85%; margin: 20px 20px 4px 20px;"
+              >
+                <view
+                  dataset="[object Object]"
+                  focusable="true"
+                >
+                  <view
+                    dataset="[object Object]"
+                    style="width: 100%;"
+                  >
+                    <view
+                      dataset="[object Object]"
+                      style="padding: 16px 16px 12px 16px;"
+                    >
+                      <text
+                        data-testid="title"
+                        dataset="[object Object]"
+                        style="color: rgb(23, 23, 23); letter-spacing: 0; line-height: 30; font-weight: 400; font-style: normal; font-size: 20px;"
+                      >
+                        Clowns Spinning Hats
+                      </text>
+                    </view>
+                    <view
+                      aria-orientation="horizontal"
+                      dataset="[object Object]"
+                      style="background-color: rgb(212, 212, 212); width: 100%; height: 1px;"
+                      thickness="1"
+                    />
+                    <view
+                      dataset="[object Object]"
+                      style="padding: 24px 16px 24px 16px;"
+                    >
+                      <text
+                        data-testid="year"
+                        dataset="[object Object]"
+                        style="color: rgb(23, 23, 23); letter-spacing: 0; line-height: 22.5; font-weight: 400; font-style: normal; font-size: 15px;"
+                      >
+                        Year Released: 
+                        1900
+                      </text>
+                    </view>
+                  </view>
+                </view>
+              </view>
+              <view
+                dataset="[object Object]"
+                style="background-color: rgb(255, 255, 255); border-width: 1px; border-radius: 6px; width: 85%; margin: 20px 20px 4px 20px;"
+              >
+                <view
+                  dataset="[object Object]"
+                  focusable="true"
+                >
+                  <view
+                    dataset="[object Object]"
+                    style="width: 100%;"
+                  >
+                    <view
+                      dataset="[object Object]"
+                      style="padding: 16px 16px 12px 16px;"
+                    >
+                      <text
+                        data-testid="title"
+                        dataset="[object Object]"
+                        style="color: rgb(23, 23, 23); letter-spacing: 0; line-height: 30; font-weight: 400; font-style: normal; font-size: 20px;"
+                      >
+                        Capture of Boer Battery by British
+                      </text>
+                    </view>
+                    <view
+                      aria-orientation="horizontal"
+                      dataset="[object Object]"
+                      style="background-color: rgb(212, 212, 212); width: 100%; height: 1px;"
+                      thickness="1"
+                    />
+                    <view
+                      dataset="[object Object]"
+                      style="padding: 24px 16px 24px 16px;"
+                    >
+                      <text
+                        data-testid="year"
+                        dataset="[object Object]"
+                        style="color: rgb(23, 23, 23); letter-spacing: 0; line-height: 22.5; font-weight: 400; font-style: normal; font-size: 15px;"
+                      >
+                        Year Released: 
+                        1900
+                      </text>
+                    </view>
+                  </view>
+                </view>
+              </view>
+              <view
+                dataset="[object Object]"
+                style="background-color: rgb(255, 255, 255); border-width: 1px; border-radius: 6px; width: 85%; margin: 20px 20px 4px 20px;"
+              >
+                <view
+                  dataset="[object Object]"
+                  focusable="true"
+                >
+                  <view
+                    dataset="[object Object]"
+                    style="width: 100%;"
+                  >
+                    <view
+                      dataset="[object Object]"
+                      style="padding: 16px 16px 12px 16px;"
+                    >
+                      <text
+                        data-testid="title"
+                        dataset="[object Object]"
+                        style="color: rgb(23, 23, 23); letter-spacing: 0; line-height: 30; font-weight: 400; font-style: normal; font-size: 20px;"
+                      >
+                        The Enchanted Drawing
+                      </text>
+                    </view>
+                    <view
+                      aria-orientation="horizontal"
+                      dataset="[object Object]"
+                      style="background-color: rgb(212, 212, 212); width: 100%; height: 1px;"
+                      thickness="1"
+                    />
+                    <view
+                      dataset="[object Object]"
+                      style="padding: 24px 16px 24px 16px;"
+                    >
+                      <text
+                        data-testid="year"
+                        dataset="[object Object]"
+                        style="color: rgb(23, 23, 23); letter-spacing: 0; line-height: 22.5; font-weight: 400; font-style: normal; font-size: 15px;"
+                      >
+                        Year Released: 
+                        1900
+                      </text>
+                    </view>
+                  </view>
+                </view>
+              </view>
+              <view
+                dataset="[object Object]"
+                style="background-color: rgb(255, 255, 255); border-width: 1px; border-radius: 6px; width: 85%; margin: 20px 20px 4px 20px;"
+              >
+                <view
+                  dataset="[object Object]"
+                  focusable="true"
+                >
+                  <view
+                    dataset="[object Object]"
+                    style="width: 100%;"
+                  >
+                    <view
+                      dataset="[object Object]"
+                      style="padding: 16px 16px 12px 16px;"
+                    >
+                      <text
+                        data-testid="title"
+                        dataset="[object Object]"
+                        style="color: rgb(23, 23, 23); letter-spacing: 0; line-height: 30; font-weight: 400; font-style: normal; font-size: 20px;"
+                      >
+                        Feeding Sea Lions
+                      </text>
+                    </view>
+                    <view
+                      aria-orientation="horizontal"
+                      dataset="[object Object]"
+                      style="background-color: rgb(212, 212, 212); width: 100%; height: 1px;"
+                      thickness="1"
+                    />
+                    <view
+                      dataset="[object Object]"
+                      style="padding: 24px 16px 24px 16px;"
+                    >
+                      <text
+                        data-testid="year"
+                        dataset="[object Object]"
+                        style="color: rgb(23, 23, 23); letter-spacing: 0; line-height: 22.5; font-weight: 400; font-style: normal; font-size: 15px;"
+                      >
+                        Year Released: 
+                        1900
+                      </text>
+                    </view>
+                  </view>
+                </view>
+              </view>
+            </view>
+          </rctscrollview>
+          <view
+            dataset="[object Object]"
+            style="display: flex; align-items: center; justify-content: center;"
+          />
+          <view
+            dataset="[object Object]"
+            style="padding-top: 16px;"
+          >
+            <view
+              accessibilityrole="button"
+              colorscheme="primary"
+              dataset="[object Object]"
+              focusable="true"
+              style="border-radius: 4px; flex-direction: row; justify-content: center; align-items: center; background-color: rgb(8, 145, 178); padding: 10px 12px 10px 12px; margin: 4px 4px 4px 4px;"
+            >
+              <view
+                dataset="[object Object]"
+                style="flex-direction: row; align-items: center;"
+              >
+                <view
+                  dataset="[object Object]"
+                >
+                  <text
+                    dataset="[object Object]"
+                    style="letter-spacing: 0; line-height: 21; color: rgb(255, 255, 255); font-weight: 400; font-style: normal; font-size: 14px;"
+                  >
+                    Previous
+                  </text>
+                </view>
+              </view>
+            </view>
+            <view
+              accessibilityrole="button"
+              colorscheme="primary"
+              dataset="[object Object]"
+              focusable="true"
+              style="border-radius: 4px; flex-direction: row; justify-content: center; align-items: center; background-color: rgb(8, 145, 178); padding: 10px 12px 10px 12px; margin: 4px 4px 4px 4px;"
+            >
+              <view
+                dataset="[object Object]"
+                style="flex-direction: row; align-items: center;"
+              >
+                <view
+                  dataset="[object Object]"
+                >
+                  <text
+                    dataset="[object Object]"
+                    style="letter-spacing: 0; line-height: 21; color: rgb(255, 255, 255); font-weight: 400; font-style: normal; font-size: 14px;"
+                  >
+                    Next
+                  </text>
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </rncsafeareaprovider>
+    </div>
+  </body>,
+  "container": <div>
+    <rncsafeareaprovider>
+      <view
+        dataset="[object Object]"
+        style="justify-content: center; margin: 16px 16px 16px 16px;"
+      >
+        <view
+          dataset="[object Object]"
+          style="padding-bottom: 12px;"
+        >
+          <text
+            dataset="[object Object]"
+            style="letter-spacing: 0; line-height: 30; color: rgb(255, 255, 255); margin: 55px 16px 20px 16px; font-weight: 700; font-style: normal; font-size: 24px;"
+          >
+            Filmdatabase
+          </text>
+          <view
+            dataset="[object Object]"
+            style="margin: 4px 4px 4px 4px;"
+          >
+            <view
+              dataset="[object Object]"
+              style="flex-direction: row; align-items: center; overflow: hidden; border-width: 1px; border-radius: 4px; background-color: rgb(255, 255, 255);"
+            >
+              <textinput
+                accessibilitylabel="Search by title"
+                dataset="[object Object]"
+                placeholder="Search for title"
+                placeholdertextcolor="#a3a3a3"
+                style="width: 100%; color: rgb(23, 23, 23); font-size: 15px; padding: 8px 12px 8px 12px; font-weight: 400; font-style: normal; background-color: transparent; flex: 1; height: 100%;"
+                value=""
+              />
+              <view
+                dataset="[object Object]"
+              />
+              <view
+                accessibilityrole="button"
+                colorscheme="primary"
+                dataset="[object Object]"
+                focusable="true"
+                style="border-radius: 0; flex-direction: row; justify-content: center; align-items: center; background-color: rgb(8, 145, 178); width: 25%; height: 100%; padding: 8px 12px 8px 12px;"
+              >
+                <view
+                  dataset="[object Object]"
+                  style="flex-direction: row; align-items: center;"
+                >
+                  <view
+                    dataset="[object Object]"
+                  >
+                    <text
+                      dataset="[object Object]"
+                      style="letter-spacing: 0; line-height: 21; color: rgb(255, 255, 255); font-weight: 400; font-style: normal; font-size: 14px;"
+                    >
+                      Search
+                    </text>
+                  </view>
+                </view>
+              </view>
+            </view>
+          </view>
+          <view
+            dataset="[object Object]"
+            style="display: flex; flex-direction: row; justify-content: center;"
+          >
+            <view
+              dataset="[object Object]"
+              style="width: 45%; margin: 8px 8px 8px 8px;"
+            >
+              <view
+                accessibilitylabel="Select genre"
+                accessibilityrole="button"
+                dataset="[object Object]"
+                focusable="true"
+                style="margin-right: 0px; margin-left: 0px;"
+              >
+                <view
+                  dataset="[object Object]"
+                  style="flex-direction: row; align-items: center; overflow: hidden; border-width: 1px; border-radius: 4px; background-color: rgb(255, 255, 255);"
+                >
+                  <textinput
+                    aria-hidden="true"
+                    dataset="[object Object]"
+                    focusable="false"
+                    importantforaccessibility="no"
+                    placeholder="Filter genre"
+                    placeholdertextcolor="#a3a3a3"
+                    pointer-events="none"
+                    selection="[object Object]"
+                    style="width: 100%; color: rgb(23, 23, 23); font-size: 15px; padding: 8px 12px 8px 12px; font-weight: 400; font-style: normal; background-color: transparent; flex: 1; height: 100%;"
+                    value=""
+                  />
+                  <view
+                    dataset="[object Object]"
+                  />
+                  <rnsvgsvgview
+                    accessibilityrole="image"
+                    align="xMidYMid"
+                    bbheight="24"
+                    bbwidth="24"
+                    color="4285756275"
+                    dataset="[object Object]"
+                    focusable="false"
+                    meetorslice="0"
+                    minx="0"
+                    miny="0"
+                    stroke=""
+                    tintcolor="4285756275"
+                    vbheight="24"
+                    vbwidth="24"
+                  >
+                    <rnsvggroup
+                      fill="0,4278190080"
+                      fill-opacity="1"
+                      fill-rule="1"
+                      font="[object Object]"
+                      matrix="1,0,0,1,0,0"
+                      opacity="1"
+                      originx="0"
+                      originy="0"
+                      proplist="stroke"
+                      rotation="0"
+                      scalex="1"
+                      scaley="1"
+                      skewx="0"
+                      skewy="0"
+                      stroke-linecap="0"
+                      stroke-linejoin="0"
+                      stroke-miterlimit="4"
+                      stroke-opacity="1"
+                      stroke-width="1"
+                      vector-effect="0"
+                      x="0"
+                      y="0"
+                    >
+                      <rnsvggroup
+                        fill="0,4278190080"
+                        fill-opacity="1"
+                        fill-rule="1"
+                        font="[object Object]"
+                        matrix="1,0,0,1,0,0"
+                        opacity="1"
+                        originx="0"
+                        originy="0"
+                        proplist=""
+                        rotation="0"
+                        scalex="1"
+                        scaley="1"
+                        skewx="0"
+                        skewy="0"
+                        stroke-linecap="0"
+                        stroke-linejoin="0"
+                        stroke-miterlimit="4"
+                        stroke-opacity="1"
+                        stroke-width="1"
+                        vector-effect="0"
+                        x="0"
+                        y="0"
+                      >
+                        <rnsvgpath
+                          d="M20.2286 6L11.9973 14.3785L3.76862 6.00268L2 7.80293L12 18L22 7.80293L20.2286 6Z"
+                          fill="2"
+                          fill-opacity="1"
+                          fill-rule="1"
+                          matrix="1,0,0,1,0,0"
+                          opacity="1"
+                          originx="0"
+                          originy="0"
+                          proplist="fill,stroke"
+                          rotation="0"
+                          scalex="1"
+                          scaley="1"
+                          skewx="0"
+                          skewy="0"
+                          stroke-linecap="0"
+                          stroke-linejoin="0"
+                          stroke-miterlimit="4"
+                          stroke-opacity="1"
+                          stroke-width="1"
+                          vector-effect="0"
+                          x="0"
+                          y="0"
+                        />
+                      </rnsvggroup>
+                    </rnsvggroup>
+                  </rnsvgsvgview>
+                </view>
+              </view>
+            </view>
+            <view
+              dataset="[object Object]"
+              style="width: 45%; margin: 8px 8px 8px 8px;"
+            >
+              <view
+                accessibilitylabel="Sort on year"
+                accessibilityrole="button"
+                dataset="[object Object]"
+                focusable="true"
+                style="margin-right: 0px; margin-left: 0px;"
+              >
+                <view
+                  dataset="[object Object]"
+                  style="flex-direction: row; align-items: center; overflow: hidden; border-width: 1px; border-radius: 4px; background-color: rgb(255, 255, 255);"
+                >
+                  <textinput
+                    aria-hidden="true"
+                    dataset="[object Object]"
+                    focusable="false"
+                    importantforaccessibility="no"
+                    placeholdertextcolor="#a3a3a3"
+                    pointer-events="none"
+                    selection="[object Object]"
+                    style="width: 100%; color: rgb(23, 23, 23); font-size: 15px; padding: 8px 12px 8px 12px; font-weight: 400; font-style: normal; background-color: transparent; flex: 1; height: 100%;"
+                    value="Ascending"
+                  />
+                  <view
+                    dataset="[object Object]"
+                  />
+                  <rnsvgsvgview
+                    accessibilityrole="image"
+                    align="xMidYMid"
+                    bbheight="24"
+                    bbwidth="24"
+                    color="4285756275"
+                    dataset="[object Object]"
+                    focusable="false"
+                    meetorslice="0"
+                    minx="0"
+                    miny="0"
+                    stroke=""
+                    tintcolor="4285756275"
+                    vbheight="24"
+                    vbwidth="24"
+                  >
+                    <rnsvggroup
+                      fill="0,4278190080"
+                      fill-opacity="1"
+                      fill-rule="1"
+                      font="[object Object]"
+                      matrix="1,0,0,1,0,0"
+                      opacity="1"
+                      originx="0"
+                      originy="0"
+                      proplist="stroke"
+                      rotation="0"
+                      scalex="1"
+                      scaley="1"
+                      skewx="0"
+                      skewy="0"
+                      stroke-linecap="0"
+                      stroke-linejoin="0"
+                      stroke-miterlimit="4"
+                      stroke-opacity="1"
+                      stroke-width="1"
+                      vector-effect="0"
+                      x="0"
+                      y="0"
+                    >
+                      <rnsvggroup
+                        fill="0,4278190080"
+                        fill-opacity="1"
+                        fill-rule="1"
+                        font="[object Object]"
+                        matrix="1,0,0,1,0,0"
+                        opacity="1"
+                        originx="0"
+                        originy="0"
+                        proplist=""
+                        rotation="0"
+                        scalex="1"
+                        scaley="1"
+                        skewx="0"
+                        skewy="0"
+                        stroke-linecap="0"
+                        stroke-linejoin="0"
+                        stroke-miterlimit="4"
+                        stroke-opacity="1"
+                        stroke-width="1"
+                        vector-effect="0"
+                        x="0"
+                        y="0"
+                      >
+                        <rnsvgpath
+                          d="M20.2286 6L11.9973 14.3785L3.76862 6.00268L2 7.80293L12 18L22 7.80293L20.2286 6Z"
+                          fill="2"
+                          fill-opacity="1"
+                          fill-rule="1"
+                          matrix="1,0,0,1,0,0"
+                          opacity="1"
+                          originx="0"
+                          originy="0"
+                          proplist="fill,stroke"
+                          rotation="0"
+                          scalex="1"
+                          scaley="1"
+                          skewx="0"
+                          skewy="0"
+                          stroke-linecap="0"
+                          stroke-linejoin="0"
+                          stroke-miterlimit="4"
+                          stroke-opacity="1"
+                          stroke-width="1"
+                          vector-effect="0"
+                          x="0"
+                          y="0"
+                        />
+                      </rnsvggroup>
+                    </rnsvggroup>
+                  </rnsvgsvgview>
+                </view>
+              </view>
+            </view>
+          </view>
+          <view
+            dataset="[object Object]"
+            style="display: flex; flex-direction: row; justify-content: center;"
+          >
+            <view
+              dataset="[object Object]"
+              style="margin: 8px 4px 4px 4px;"
+            >
+              <view
+                accessibilitylabel="Filter on year"
+                accessibilityrole="button"
+                colorscheme="primary"
+                dataset="[object Object]"
+                focusable="true"
+                style="border-radius: 4px; flex-direction: row; justify-content: center; align-items: center; background-color: rgb(255, 255, 255); border-width: 1px; font-size: 15px; padding: 10px 12px 10px 12px;"
+              >
+                <view
+                  dataset="[object Object]"
+                  style="flex-direction: row; align-items: center;"
+                >
+                  <view
+                    dataset="[object Object]"
+                  >
+                    <text
+                      dataset="[object Object]"
+                      style="letter-spacing: 0; line-height: 21; color: grey; font-weight: 400; font-style: normal; font-size: 14px;"
+                    >
+                      Filter year 
+                      <rnsvgsvgview
+                        accessibilityrole="image"
+                        align="xMidYMid"
+                        bbheight="24"
+                        bbwidth="24"
+                        color="4286611584"
+                        dataset="[object Object]"
+                        focusable="false"
+                        meetorslice="0"
+                        minx="0"
+                        miny="0"
+                        stroke=""
+                        tintcolor="4286611584"
+                        vbheight="24"
+                        vbwidth="24"
+                      >
+                        <rnsvggroup
+                          fill="0,4278190080"
+                          fill-opacity="1"
+                          fill-rule="1"
+                          font="[object Object]"
+                          matrix="1,0,0,1,0,0"
+                          opacity="1"
+                          originx="0"
+                          originy="0"
+                          proplist="stroke"
+                          rotation="0"
+                          scalex="1"
+                          scaley="1"
+                          skewx="0"
+                          skewy="0"
+                          stroke-linecap="0"
+                          stroke-linejoin="0"
+                          stroke-miterlimit="4"
+                          stroke-opacity="1"
+                          stroke-width="1"
+                          vector-effect="0"
+                          x="0"
+                          y="0"
+                        >
+                          <rnsvggroup
+                            fill="0,4278190080"
+                            fill-opacity="1"
+                            fill-rule="1"
+                            font="[object Object]"
+                            matrix="1,0,0,1,0,0"
+                            opacity="1"
+                            originx="0"
+                            originy="0"
+                            proplist=""
+                            rotation="0"
+                            scalex="1"
+                            scaley="1"
+                            skewx="0"
+                            skewy="0"
+                            stroke-linecap="0"
+                            stroke-linejoin="0"
+                            stroke-miterlimit="4"
+                            stroke-opacity="1"
+                            stroke-width="1"
+                            vector-effect="0"
+                            x="0"
+                            y="0"
+                          >
+                            <rnsvgpath
+                              d="M20.2286 6L11.9973 14.3785L3.76862 6.00268L2 7.80293L12 18L22 7.80293L20.2286 6Z"
+                              fill="2"
+                              fill-opacity="1"
+                              fill-rule="1"
+                              matrix="1,0,0,1,0,0"
+                              opacity="1"
+                              originx="0"
+                              originy="0"
+                              proplist="fill,stroke"
+                              rotation="0"
+                              scalex="1"
+                              scaley="1"
+                              skewx="0"
+                              skewy="0"
+                              stroke-linecap="0"
+                              stroke-linejoin="0"
+                              stroke-miterlimit="4"
+                              stroke-opacity="1"
+                              stroke-width="1"
+                              vector-effect="0"
+                              x="0"
+                              y="0"
+                            />
+                          </rnsvggroup>
+                        </rnsvggroup>
+                      </rnsvgsvgview>
+                    </text>
+                  </view>
+                </view>
+              </view>
+            </view>
+            <view
+              dataset="[object Object]"
+              style="display: flex; align-items: center; justify-content: center;"
+            />
+            <view
+              dataset="[object Object]"
+              style="margin: 8px 4px 4px 4px;"
+            >
+              <view
+                accessibilitylabel="Reset filters"
+                accessibilityrole="button"
+                colorscheme="primary"
+                dataset="[object Object]"
+                focusable="true"
+                style="border-radius: 4px; flex-direction: row; justify-content: center; align-items: center; background-color: rgb(8, 145, 178); padding: 10px 12px 10px 12px;"
+              >
+                <view
+                  dataset="[object Object]"
+                  style="flex-direction: row; align-items: center;"
+                >
+                  <view
+                    dataset="[object Object]"
+                  >
+                    <text
+                      dataset="[object Object]"
+                      style="letter-spacing: 0; line-height: 21; color: rgb(255, 255, 255); font-weight: 400; font-style: normal; font-size: 14px;"
+                    >
+                      Reset Filters
+                    </text>
+                  </view>
+                </view>
+              </view>
+            </view>
+            <view
+              dataset="[object Object]"
+              style="margin: 8px 4px 4px 4px;"
+            >
+              <view
+                accessibilitylabel="Create new film"
+                accessibilityrole="button"
+                colorscheme="primary"
+                dataset="[object Object]"
+                focusable="true"
+                style="border-radius: 4px; flex-direction: row; justify-content: center; align-items: center; background-color: rgb(8, 145, 178); padding: 10px 12px 10px 12px;"
+              >
+                <view
+                  dataset="[object Object]"
+                  style="flex-direction: row; align-items: center;"
+                >
+                  <view
+                    dataset="[object Object]"
+                  >
+                    <text
+                      dataset="[object Object]"
+                      style="letter-spacing: 0; line-height: 21; color: rgb(255, 255, 255); font-weight: 400; font-style: normal; font-size: 14px;"
+                    >
+                      Add New Film
+                    </text>
+                  </view>
+                </view>
+              </view>
+              <view
+                dataset="[object Object]"
+                style="display: flex; align-items: center; justify-content: center;"
+              />
+            </view>
+          </view>
+        </view>
+        <rctscrollview
+          contentcontainerstyle="[object Object],[object Object],[object Object]"
+          dataset="[object Object]"
+          style="width: 100%; height: 384px;"
+        >
+          <view>
+            <view
+              dataset="[object Object]"
+              style="background-color: rgb(255, 255, 255); border-width: 1px; border-radius: 6px; width: 85%; margin: 20px 20px 4px 20px;"
+            >
+              <view
+                dataset="[object Object]"
+                focusable="true"
+              >
+                <view
+                  dataset="[object Object]"
+                  style="width: 100%;"
+                >
+                  <view
+                    dataset="[object Object]"
+                    style="padding: 16px 16px 12px 16px;"
+                  >
+                    <text
+                      data-testid="title"
+                      dataset="[object Object]"
+                      style="color: rgb(23, 23, 23); letter-spacing: 0; line-height: 30; font-weight: 400; font-style: normal; font-size: 20px;"
+                    >
+                      After Dark in Central Park
+                    </text>
+                  </view>
+                  <view
+                    aria-orientation="horizontal"
+                    dataset="[object Object]"
+                    style="background-color: rgb(212, 212, 212); width: 100%; height: 1px;"
+                    thickness="1"
+                  />
+                  <view
+                    dataset="[object Object]"
+                    style="padding: 24px 16px 24px 16px;"
+                  >
+                    <text
+                      data-testid="year"
+                      dataset="[object Object]"
+                      style="color: rgb(23, 23, 23); letter-spacing: 0; line-height: 22.5; font-weight: 400; font-style: normal; font-size: 15px;"
+                    >
+                      Year Released: 
+                      1900
+                    </text>
+                  </view>
+                </view>
+              </view>
+            </view>
+            <view
+              dataset="[object Object]"
+              style="background-color: rgb(255, 255, 255); border-width: 1px; border-radius: 6px; width: 85%; margin: 20px 20px 4px 20px;"
+            >
+              <view
+                dataset="[object Object]"
+                focusable="true"
+              >
+                <view
+                  dataset="[object Object]"
+                  style="width: 100%;"
+                >
+                  <view
+                    dataset="[object Object]"
+                    style="padding: 16px 16px 12px 16px;"
+                  >
+                    <text
+                      data-testid="title"
+                      dataset="[object Object]"
+                      style="color: rgb(23, 23, 23); letter-spacing: 0; line-height: 30; font-weight: 400; font-style: normal; font-size: 20px;"
+                    >
+                      Boarding School Girls' Pajama Parade
+                    </text>
+                  </view>
+                  <view
+                    aria-orientation="horizontal"
+                    dataset="[object Object]"
+                    style="background-color: rgb(212, 212, 212); width: 100%; height: 1px;"
+                    thickness="1"
+                  />
+                  <view
+                    dataset="[object Object]"
+                    style="padding: 24px 16px 24px 16px;"
+                  >
+                    <text
+                      data-testid="year"
+                      dataset="[object Object]"
+                      style="color: rgb(23, 23, 23); letter-spacing: 0; line-height: 22.5; font-weight: 400; font-style: normal; font-size: 15px;"
+                    >
+                      Year Released: 
+                      1900
+                    </text>
+                  </view>
+                </view>
+              </view>
+            </view>
+            <view
+              dataset="[object Object]"
+              style="background-color: rgb(255, 255, 255); border-width: 1px; border-radius: 6px; width: 85%; margin: 20px 20px 4px 20px;"
+            >
+              <view
+                dataset="[object Object]"
+                focusable="true"
+              >
+                <view
+                  dataset="[object Object]"
+                  style="width: 100%;"
+                >
+                  <view
+                    dataset="[object Object]"
+                    style="padding: 16px 16px 12px 16px;"
+                  >
+                    <text
+                      data-testid="title"
+                      dataset="[object Object]"
+                      style="color: rgb(23, 23, 23); letter-spacing: 0; line-height: 30; font-weight: 400; font-style: normal; font-size: 20px;"
+                    >
+                      Buffalo Bill's Wild West Parad
+                    </text>
+                  </view>
+                  <view
+                    aria-orientation="horizontal"
+                    dataset="[object Object]"
+                    style="background-color: rgb(212, 212, 212); width: 100%; height: 1px;"
+                    thickness="1"
+                  />
+                  <view
+                    dataset="[object Object]"
+                    style="padding: 24px 16px 24px 16px;"
+                  >
+                    <text
+                      data-testid="year"
+                      dataset="[object Object]"
+                      style="color: rgb(23, 23, 23); letter-spacing: 0; line-height: 22.5; font-weight: 400; font-style: normal; font-size: 15px;"
+                    >
+                      Year Released: 
+                      1900
+                    </text>
+                  </view>
+                </view>
+              </view>
+            </view>
+            <view
+              dataset="[object Object]"
+              style="background-color: rgb(255, 255, 255); border-width: 1px; border-radius: 6px; width: 85%; margin: 20px 20px 4px 20px;"
+            >
+              <view
+                dataset="[object Object]"
+                focusable="true"
+              >
+                <view
+                  dataset="[object Object]"
+                  style="width: 100%;"
+                >
+                  <view
+                    dataset="[object Object]"
+                    style="padding: 16px 16px 12px 16px;"
+                  >
+                    <text
+                      data-testid="title"
+                      dataset="[object Object]"
+                      style="color: rgb(23, 23, 23); letter-spacing: 0; line-height: 30; font-weight: 400; font-style: normal; font-size: 20px;"
+                    >
+                      Caught
+                    </text>
+                  </view>
+                  <view
+                    aria-orientation="horizontal"
+                    dataset="[object Object]"
+                    style="background-color: rgb(212, 212, 212); width: 100%; height: 1px;"
+                    thickness="1"
+                  />
+                  <view
+                    dataset="[object Object]"
+                    style="padding: 24px 16px 24px 16px;"
+                  >
+                    <text
+                      data-testid="year"
+                      dataset="[object Object]"
+                      style="color: rgb(23, 23, 23); letter-spacing: 0; line-height: 22.5; font-weight: 400; font-style: normal; font-size: 15px;"
+                    >
+                      Year Released: 
+                      1900
+                    </text>
+                  </view>
+                </view>
+              </view>
+            </view>
+            <view
+              dataset="[object Object]"
+              style="background-color: rgb(255, 255, 255); border-width: 1px; border-radius: 6px; width: 85%; margin: 20px 20px 4px 20px;"
+            >
+              <view
+                dataset="[object Object]"
+                focusable="true"
+              >
+                <view
+                  dataset="[object Object]"
+                  style="width: 100%;"
+                >
+                  <view
+                    dataset="[object Object]"
+                    style="padding: 16px 16px 12px 16px;"
+                  >
+                    <text
+                      data-testid="title"
+                      dataset="[object Object]"
+                      style="color: rgb(23, 23, 23); letter-spacing: 0; line-height: 30; font-weight: 400; font-style: normal; font-size: 20px;"
+                    >
+                      Clowns Spinning Hats
+                    </text>
+                  </view>
+                  <view
+                    aria-orientation="horizontal"
+                    dataset="[object Object]"
+                    style="background-color: rgb(212, 212, 212); width: 100%; height: 1px;"
+                    thickness="1"
+                  />
+                  <view
+                    dataset="[object Object]"
+                    style="padding: 24px 16px 24px 16px;"
+                  >
+                    <text
+                      data-testid="year"
+                      dataset="[object Object]"
+                      style="color: rgb(23, 23, 23); letter-spacing: 0; line-height: 22.5; font-weight: 400; font-style: normal; font-size: 15px;"
+                    >
+                      Year Released: 
+                      1900
+                    </text>
+                  </view>
+                </view>
+              </view>
+            </view>
+            <view
+              dataset="[object Object]"
+              style="background-color: rgb(255, 255, 255); border-width: 1px; border-radius: 6px; width: 85%; margin: 20px 20px 4px 20px;"
+            >
+              <view
+                dataset="[object Object]"
+                focusable="true"
+              >
+                <view
+                  dataset="[object Object]"
+                  style="width: 100%;"
+                >
+                  <view
+                    dataset="[object Object]"
+                    style="padding: 16px 16px 12px 16px;"
+                  >
+                    <text
+                      data-testid="title"
+                      dataset="[object Object]"
+                      style="color: rgb(23, 23, 23); letter-spacing: 0; line-height: 30; font-weight: 400; font-style: normal; font-size: 20px;"
+                    >
+                      Capture of Boer Battery by British
+                    </text>
+                  </view>
+                  <view
+                    aria-orientation="horizontal"
+                    dataset="[object Object]"
+                    style="background-color: rgb(212, 212, 212); width: 100%; height: 1px;"
+                    thickness="1"
+                  />
+                  <view
+                    dataset="[object Object]"
+                    style="padding: 24px 16px 24px 16px;"
+                  >
+                    <text
+                      data-testid="year"
+                      dataset="[object Object]"
+                      style="color: rgb(23, 23, 23); letter-spacing: 0; line-height: 22.5; font-weight: 400; font-style: normal; font-size: 15px;"
+                    >
+                      Year Released: 
+                      1900
+                    </text>
+                  </view>
+                </view>
+              </view>
+            </view>
+            <view
+              dataset="[object Object]"
+              style="background-color: rgb(255, 255, 255); border-width: 1px; border-radius: 6px; width: 85%; margin: 20px 20px 4px 20px;"
+            >
+              <view
+                dataset="[object Object]"
+                focusable="true"
+              >
+                <view
+                  dataset="[object Object]"
+                  style="width: 100%;"
+                >
+                  <view
+                    dataset="[object Object]"
+                    style="padding: 16px 16px 12px 16px;"
+                  >
+                    <text
+                      data-testid="title"
+                      dataset="[object Object]"
+                      style="color: rgb(23, 23, 23); letter-spacing: 0; line-height: 30; font-weight: 400; font-style: normal; font-size: 20px;"
+                    >
+                      The Enchanted Drawing
+                    </text>
+                  </view>
+                  <view
+                    aria-orientation="horizontal"
+                    dataset="[object Object]"
+                    style="background-color: rgb(212, 212, 212); width: 100%; height: 1px;"
+                    thickness="1"
+                  />
+                  <view
+                    dataset="[object Object]"
+                    style="padding: 24px 16px 24px 16px;"
+                  >
+                    <text
+                      data-testid="year"
+                      dataset="[object Object]"
+                      style="color: rgb(23, 23, 23); letter-spacing: 0; line-height: 22.5; font-weight: 400; font-style: normal; font-size: 15px;"
+                    >
+                      Year Released: 
+                      1900
+                    </text>
+                  </view>
+                </view>
+              </view>
+            </view>
+            <view
+              dataset="[object Object]"
+              style="background-color: rgb(255, 255, 255); border-width: 1px; border-radius: 6px; width: 85%; margin: 20px 20px 4px 20px;"
+            >
+              <view
+                dataset="[object Object]"
+                focusable="true"
+              >
+                <view
+                  dataset="[object Object]"
+                  style="width: 100%;"
+                >
+                  <view
+                    dataset="[object Object]"
+                    style="padding: 16px 16px 12px 16px;"
+                  >
+                    <text
+                      data-testid="title"
+                      dataset="[object Object]"
+                      style="color: rgb(23, 23, 23); letter-spacing: 0; line-height: 30; font-weight: 400; font-style: normal; font-size: 20px;"
+                    >
+                      Feeding Sea Lions
+                    </text>
+                  </view>
+                  <view
+                    aria-orientation="horizontal"
+                    dataset="[object Object]"
+                    style="background-color: rgb(212, 212, 212); width: 100%; height: 1px;"
+                    thickness="1"
+                  />
+                  <view
+                    dataset="[object Object]"
+                    style="padding: 24px 16px 24px 16px;"
+                  >
+                    <text
+                      data-testid="year"
+                      dataset="[object Object]"
+                      style="color: rgb(23, 23, 23); letter-spacing: 0; line-height: 22.5; font-weight: 400; font-style: normal; font-size: 15px;"
+                    >
+                      Year Released: 
+                      1900
+                    </text>
+                  </view>
+                </view>
+              </view>
+            </view>
+          </view>
+        </rctscrollview>
+        <view
+          dataset="[object Object]"
+          style="display: flex; align-items: center; justify-content: center;"
+        />
+        <view
+          dataset="[object Object]"
+          style="padding-top: 16px;"
+        >
+          <view
+            accessibilityrole="button"
+            colorscheme="primary"
+            dataset="[object Object]"
+            focusable="true"
+            style="border-radius: 4px; flex-direction: row; justify-content: center; align-items: center; background-color: rgb(8, 145, 178); padding: 10px 12px 10px 12px; margin: 4px 4px 4px 4px;"
+          >
+            <view
+              dataset="[object Object]"
+              style="flex-direction: row; align-items: center;"
+            >
+              <view
+                dataset="[object Object]"
+              >
+                <text
+                  dataset="[object Object]"
+                  style="letter-spacing: 0; line-height: 21; color: rgb(255, 255, 255); font-weight: 400; font-style: normal; font-size: 14px;"
+                >
+                  Previous
+                </text>
+              </view>
+            </view>
+          </view>
+          <view
+            accessibilityrole="button"
+            colorscheme="primary"
+            dataset="[object Object]"
+            focusable="true"
+            style="border-radius: 4px; flex-direction: row; justify-content: center; align-items: center; background-color: rgb(8, 145, 178); padding: 10px 12px 10px 12px; margin: 4px 4px 4px 4px;"
+          >
+            <view
+              dataset="[object Object]"
+              style="flex-direction: row; align-items: center;"
+            >
+              <view
+                dataset="[object Object]"
+              >
+                <text
+                  dataset="[object Object]"
+                  style="letter-spacing: 0; line-height: 21; color: rgb(255, 255, 255); font-weight: 400; font-style: normal; font-size: 14px;"
+                >
+                  Next
+                </text>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </rncsafeareaprovider>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
