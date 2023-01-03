@@ -1,4 +1,4 @@
-# Prosjekt 4
+# Filmliste i React Native
 
 ## Beskrivelse av applikasjonen
 Applikasjonen er en React Native-applikasjon for Android og iOS. Vi har lagt inn en wheel-picker for å filtrere på år som kun fungerer for mobil og en web-visning av applikasjonen fungerer ikke. Man må også være på NTNU VPN for at applikasjonen skal fungere.
